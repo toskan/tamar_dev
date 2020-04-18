@@ -43,22 +43,6 @@
 	position: absolute;
 	width: 1px;
 }
-.project-images {
-	height: 20em;
-	width: auto;
-}
-.welcome-div {
-	height: auto;
-}
-.welcome-h2 {
-	font-size: 7em;
-	font-weight: 100;
-	color: #191970;
-	text-shadow: 0 0 80px rgba(255, 255, 255, 0.3);
-}
-.welcome-h2 > span {
-	font-weight: 100;
-}
 #submit {
 	background-color: #191970;
 	color: white;

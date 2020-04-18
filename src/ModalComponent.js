@@ -19,7 +19,7 @@ const ModalComponent = (props) => {
 					classNames="modal"
 					in
 					appear={true}
-					timeout={500}
+					timeout={300}
 					key={`${Date.now()}`}
 				>
 					<FocusTrap>

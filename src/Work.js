@@ -5,6 +5,7 @@ import UseModal from './UseModal';
 import './work.css';
 import ImageGrid from './ImageGrid';
 import ModalContent from './ModalContent';
+import { links, repos } from './links';
 
 const Work = () => {
 	const [Modal, isModalOpen, setIsModalOpen] = UseModal();
@@ -15,13 +16,17 @@ const Work = () => {
 	const [slidesState, setSlide] = useState(null);
 	const [arrIdx, setArrIdx] = useState(0);
 	const [workIndex, setWorkIndex] = useState(0);
+	const [linkState, setLink] = useState(null);
+	const [repoState, setRepo] = useState(null);
 	const toggleModalOpen = () => setIsModalOpen((prev) => !prev);
 	const getIndex = (index) => {
 		setWorkIndex(index);
 		setSlide(images[index][arrIdx]);
+		setLink(links[index]);
+		setRepo(repos[index]);
 		setTimeout(function () {
 			document.getElementById('display-left').style.visibility = 'hidden';
-		}, 5);
+		}, 1);
 	};
 	return (
 		<div className="work-div">
@@ -47,6 +52,8 @@ const Work = () => {
 					workIndex={workIndex}
 					setSlide={setSlide}
 					images={images}
+					linkState={linkState}
+					repoState={repoState}
 				/>
 			</ModalComponent>
 		</div>

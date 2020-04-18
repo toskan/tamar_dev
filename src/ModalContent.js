@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const ModalContent = (props) => {
 	const {
@@ -8,6 +8,8 @@ const ModalContent = (props) => {
 		workIndex,
 		setSlide,
 		images,
+		linkState,
+		repoState,
 	} = props;
 	const forwardSlide = () => {
 		let idxPlus = arrIdx + 1;
@@ -17,7 +19,7 @@ const ModalContent = (props) => {
 			setTimeout(function () {
 				document.getElementById('display-right').style.visibility =
 					'hidden';
-			}, 5);
+			}, 1);
 		}
 	};
 	const backSlide = () => {
@@ -31,14 +33,42 @@ const ModalContent = (props) => {
 			}, 1);
 		}
 	};
+	useEffect(() => {
+		const img = document.getElementById('modal-images');
+		img.style.opacity = '0';
+		console.log('useEffect function hit');
+		setTimeout(function () {
+			let height = img.clientHeight;
+			let width = img.clientWidth;
+			if (width > height) {
+				console.log(
+					'landscape hit ' + width + ' width ' + height + ' length'
+				);
+				img.classList.remove('portrait');
+				img.style.opacity = '1';
+				img.classList.add('landscape');
+			}
+			if (width < height) {
+				console.log(
+					'portrait hit ' + width + ' width ' + height + ' length'
+				);
+				img.classList.remove('landscape');
+				img.style.opacity = '1';
+				img.classList.add('portrait');
+			}
+		}, 500);
+	}, [slidesState]);
 	return (
 		<div className="modal-container">
 			<div className="slides-content">
 				<div className="slides-div">
-					<img src={slidesState} alt="" className="modal-images" />
-					<ul>
+					<img src={slidesState} alt="" id="modal-images" />
+					<ul className="modal-image-ul">
 						<li>
-							<a href="http://toskan.github.io">link</a>
+							<a href={linkState}>link</a>
+						</li>
+						<li>
+							<a href={repoState}>repo</a>
 						</li>
 					</ul>
 				</div>

@@ -1,12 +1,10 @@
-// const creds = require('../config');
-// import config from 'config';
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
 var cors = require('cors');
 
 var transport = {
-	host: process.env.REACT_APP_TRANSPORT_HOST, // Don’t forget to replace with the SMTP host of your provider
+	host: process.env.REACT_APP_TRANSPORT_HOST, ////  SMTP host of provider
 	port: process.env.REACT_APP_TRANSPORT_PORT,
 	auth: {
 		user: process.env.REACT_APP_MAIL_USER,
@@ -32,12 +30,10 @@ router.post('/send', (req, res, next) => {
 	var content = `name: ${name} \n email: ${email} \n  subject:${subject} \n message: ${message} `;
 	var mail = {
 		from: name,
-		to: process.env.REACT_APP_MY_EMAIL, // Change to email address that you want to receive messages on
+		to: process.env.REACT_APP_MY_EMAIL,
 		subject: subject,
 		text: content,
 	};
-	console.log(`really got here`);
-	console.log(process.env.REACT_APP_MAIL_USER);
 	transporter.sendMail(mail, (err, data) => {
 		if (err) {
 			res.json({

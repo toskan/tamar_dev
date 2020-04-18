@@ -76,14 +76,31 @@
 	color: darkgrey;
 }
 .slides-div {
-	padding-top: 20px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 .slides-div > h2 {
 	margin-left: 15px;
 }
-.modal-images {
-	width: 450px;
+#modal-images {
+	width: 50%;
 	height: auto;
+}
+#modal-images.landscape {
+	width: 90%;
+}
+#modal-images.portrait {
+	width: 50%;
+	height: auto;
+}
+.modal-image-ul > li > a {
+	font-size: 1.5em;
+	text-decoration: none;
+	color: white;
+	outline: none;
+	cursor: pointer;
+	transition: all 0.5s;
 }
 .slides-div > h3 {
 	margin-left: 15px;
