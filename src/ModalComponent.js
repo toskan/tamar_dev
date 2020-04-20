@@ -7,10 +7,9 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 const modalMount = document.getElementById('modalMount');
 
 const ModalComponent = (props) => {
-	const { isModalOpen, toggleModalOpen, setArrIdx } = props;
+	const { isModalOpen, toggleModalOpen } = props;
 	const closeButtonFunction = () => {
 		toggleModalOpen();
-		setArrIdx(0);
 	};
 	return ReactDOM.createPortal(
 		<TransitionGroup component={null}>

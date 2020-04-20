@@ -86,13 +86,17 @@
 #modal-images {
 	width: 50%;
 	height: auto;
+	visibility: hidden;
 }
 #modal-images.landscape {
-	width: 90%;
+	width: 80%;
+	height: auto;
+	visibility: visible;
 }
 #modal-images.portrait {
 	width: 50%;
 	height: auto;
+	visibility: visible;
 }
 .modal-image-ul > li > a {
 	font-size: 1.5em;

@@ -1,74 +1,92 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+
+let counter = 0;
+let link;
+let repo;
 
 const ModalContent = (props) => {
-	const {
-		slidesState,
-		setArrIdx,
-		arrIdx,
-		workIndex,
-		setSlide,
-		images,
-		linkState,
-		repoState,
-	} = props;
+	const [slidesState, setSlide] = useState(null);
+	const { activeSlideShow } = props;
+	const imageRef = useRef(null);
+	console.log(imageRef.current);
 	const forwardSlide = () => {
-		let idxPlus = arrIdx + 1;
-		setArrIdx(idxPlus);
-		setSlide(images[workIndex][idxPlus]);
-		if (idxPlus === images[workIndex].length - 2) {
-			setTimeout(function () {
-				document.getElementById('display-right').style.visibility =
-					'hidden';
-			}, 1);
-		}
+		counter++;
+		setSlide(activeSlideShow.projectImgs[counter].url);
 	};
 	const backSlide = () => {
-		let idxMinus = arrIdx - 1;
-		setArrIdx(idxMinus);
-		setSlide(images[workIndex][idxMinus]);
-		if (idxMinus === 0) {
-			setTimeout(function () {
-				document.getElementById('display-left').style.visibility =
-					'hidden';
-			}, 1);
-		}
+		counter--;
+		setSlide(activeSlideShow.projectImgs[counter].url);
 	};
 	useEffect(() => {
-		const img = document.getElementById('modal-images');
-		img.style.opacity = '0';
-		console.log('useEffect function hit');
-		setTimeout(function () {
-			let height = img.clientHeight;
-			let width = img.clientWidth;
-			if (width > height) {
-				console.log(
-					'landscape hit ' + width + ' width ' + height + ' length'
-				);
-				img.classList.remove('portrait');
-				img.style.opacity = '1';
-				img.classList.add('landscape');
-			}
-			if (width < height) {
-				console.log(
-					'portrait hit ' + width + ' width ' + height + ' length'
-				);
-				img.classList.remove('landscape');
-				img.style.opacity = '1';
-				img.classList.add('portrait');
-			}
-		}, 500);
-	}, [slidesState]);
+		counter = 0;
+		link = activeSlideShow.linkUrl;
+		repo = activeSlideShow.repoUrl;
+		setSlide(activeSlideShow.projectImgs[counter].url);
+	}, [activeSlideShow]);
+	useEffect(() => {
+		imageRef.current.classList.remove('portrait', 'landscape');
+		if (counter === 0) {
+			document.getElementById('display-left').style.visibility = 'hidden';
+		} else {
+			document.getElementById('display-left').style.visibility =
+				'visible';
+		}
+		if (counter === activeSlideShow.projectImgs.length - 1) {
+			document.getElementById('display-right').style.visibility =
+				'hidden';
+		} else {
+			document.getElementById('display-right').style.visibility =
+				'visible';
+		}
+		if (
+			imageRef.current &&
+			activeSlideShow.projectImgs[counter].orientation === 'landscape'
+		) {
+			// setTimeout(function () {
+			imageRef.current.classList.add('landscape');
+			// }, 10);
+		}
+		if (
+			imageRef.current &&
+			activeSlideShow.projectImgs[counter].orientation === 'portrait'
+		) {
+			// setTimeout(function () {
+			imageRef.current.classList.add('portrait');
+			// }, 10);
+		}
+	}, [
+		activeSlideShow.projectImgs,
+		activeSlideShow.projectImgs.length,
+		slidesState,
+	]);
 	return (
 		<div className="modal-container">
 			<div className="slides-content">
 				<div className="slides-div">
-					<img src={slidesState} alt="" id="modal-images" />
+					<img
+						ref={imageRef}
+						src={slidesState}
+						alt=""
+						id="modal-images"
+					/>
 					<ul className="modal-image-ul">
 						<li>
-							<a href={linkState}>link</a>
+							<a
+								href={link}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								link
+							</a>
 						</li>
 						<li>
-							<a href={repoState}>repo</a>
+							<a
+								href={repo}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								repo
+							</a>
 						</li>
 					</ul>
 				</div>

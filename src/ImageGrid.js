@@ -3,13 +3,13 @@ import ImageHover from './ImageHover';
 import PropTypes from 'prop-types';
 
 const ImageGrid = (props) => {
-	const { firstImages, setIsModalOpen, getIndex, isModalOpen } = props;
-	let imagesGrid = firstImages.map((work, i) => (
-		<div className="grid-image-div" key={`${work}_${i}`}>
+	const { images, setIsModalOpen, getSlideObject, isModalOpen } = props;
+	let imagesGrid = images.map((item, i) => (
+		<div className="grid-image-div" key={`${item}${i}`}>
 			<ImageHover
-				getIndex={getIndex}
-				work={work}
-				i={i}
+				getSlideObject={getSlideObject}
+				work={item.projectImgs[0].url}
+				id={`${item.id}`}
 				setIsModalOpen={setIsModalOpen}
 				isModalOpen={isModalOpen}
 			/>
@@ -21,8 +21,7 @@ const ImageGrid = (props) => {
 ImageGrid.propTypes = {
 	isModalOpen: PropTypes.bool.isRequired,
 	setIsModalOpen: PropTypes.func.isRequired,
-	getIndex: PropTypes.func.isRequired,
-	firstImages: PropTypes.array.isRequired,
+	images: PropTypes.array.isRequired,
 };
 
 export default ImageGrid;

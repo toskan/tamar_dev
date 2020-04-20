@@ -3,7 +3,7 @@ import { IoMdSearch } from 'react-icons/io';
 import PropTypes from 'prop-types';
 
 const ImageHover = (props) => {
-	const { setIsModalOpen, work, i, getIndex, isModalOpen } = props;
+	const { setIsModalOpen, work, getSlideObject, isModalOpen, id } = props;
 	const [magnifyShow, setMagnifyShow] = useState(false);
 	if (isModalOpen) {
 		document.getElementById('root').classList.toggle('opaque');
@@ -16,18 +16,18 @@ const ImageHover = (props) => {
 		<>
 			<img
 				src={work}
-				data={i}
+				data={id}
 				alt="project-screenshot"
 				className="grid-img"
 				onMouseOver={() => setMagnifyShow(true)}
 				onMouseLeave={() => setMagnifyShow(false)}
 				onClick={() => {
-					setTimeout(function () {
-						getIndex(i);
-					}, 1);
-					setTimeout(function () {
-						setIsModalOpen((prev) => !prev);
-					}, 2);
+					// setTimeout(function () {
+					getSlideObject(id);
+					// }, 1);
+					// setTimeout(function () {
+					setIsModalOpen((prev) => !prev);
+					// }, 2);
 				}}
 			/>
 			{magnifyShow && <IoMdSearch />}
@@ -38,8 +38,6 @@ const ImageHover = (props) => {
 ImageHover.propTypes = {
 	isModalOpen: PropTypes.bool.isRequired,
 	setIsModalOpen: PropTypes.func.isRequired,
-	getIndex: PropTypes.func.isRequired,
-	i: PropTypes.number.isRequired,
 	work: PropTypes.string.isRequired,
 };
 
