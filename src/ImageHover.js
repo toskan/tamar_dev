@@ -22,12 +22,8 @@ const ImageHover = (props) => {
 				onMouseOver={() => setMagnifyShow(true)}
 				onMouseLeave={() => setMagnifyShow(false)}
 				onClick={() => {
-					// setTimeout(function () {
 					getSlideObject(id);
-					// }, 1);
-					// setTimeout(function () {
 					setIsModalOpen((prev) => !prev);
-					// }, 2);
 				}}
 			/>
 			{magnifyShow && <IoMdSearch />}

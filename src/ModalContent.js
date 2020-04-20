@@ -42,17 +42,13 @@ const ModalContent = (props) => {
 			imageRef.current &&
 			activeSlideShow.projectImgs[counter].orientation === 'landscape'
 		) {
-			// setTimeout(function () {
 			imageRef.current.classList.add('landscape');
-			// }, 10);
 		}
 		if (
 			imageRef.current &&
 			activeSlideShow.projectImgs[counter].orientation === 'portrait'
 		) {
-			// setTimeout(function () {
 			imageRef.current.classList.add('portrait');
-			// }, 10);
 		}
 	}, [
 		activeSlideShow.projectImgs,
