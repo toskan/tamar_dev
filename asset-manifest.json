@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tamar_dev/static/css/main.1b3c88a5.chunk.css",
+    "main.js": "/tamar_dev/static/js/main.6564aeba.chunk.js",
+    "main.js.map": "/tamar_dev/static/js/main.6564aeba.chunk.js.map",
+    "runtime-main.js": "/tamar_dev/static/js/runtime-main.0676090a.js",
+    "runtime-main.js.map": "/tamar_dev/static/js/runtime-main.0676090a.js.map",
+    "static/js/2.446ceeb2.chunk.js": "/tamar_dev/static/js/2.446ceeb2.chunk.js",
+    "static/js/2.446ceeb2.chunk.js.map": "/tamar_dev/static/js/2.446ceeb2.chunk.js.map",
+    "index.html": "/tamar_dev/index.html",
+    "precache-manifest.df665b2822ca661d5bde80409326cf75.js": "/tamar_dev/precache-manifest.df665b2822ca661d5bde80409326cf75.js",
+    "service-worker.js": "/tamar_dev/service-worker.js",
+    "static/css/main.1b3c88a5.chunk.css.map": "/tamar_dev/static/css/main.1b3c88a5.chunk.css.map",
+    "static/js/2.446ceeb2.chunk.js.LICENSE.txt": "/tamar_dev/static/js/2.446ceeb2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0676090a.js",
+    "static/js/2.446ceeb2.chunk.js",
+    "static/css/main.1b3c88a5.chunk.css",
+    "static/js/main.6564aeba.chunk.js"
+  ]
+}
