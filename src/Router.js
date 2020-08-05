@@ -8,7 +8,7 @@ class Router extends React.Component {
 	render() {
 		return (
 			<Routes>
-				<Route element={<Home />} />
+				<Route path="*" element={<Home />} />
 				<Route path="/work" element={<Work />} />
 				<Route path="/contact" element={<Contact />} />
 			</Routes>
@@ -17,5 +17,3 @@ class Router extends React.Component {
 }
 
 export default Router;
-
-// removed path (wasn't showing on home-page) path="/"

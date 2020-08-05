@@ -1,3 +1,4 @@
+//this is the node server and runs in the terminal with command node index.js
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
@@ -7,7 +8,7 @@ var transport = {
 	host: process.env.REACT_APP_TRANSPORT_HOST, ////  SMTP host of provider
 	port: process.env.REACT_APP_TRANSPORT_PORT,
 	auth: {
-		user: process.env.REACT_APP_MAIL_USER,
+		user: process.env.REACT_APP_MY_EMAIL,
 		pass: process.env.REACT_APP_MAIL_PASS,
 	},
 };
@@ -22,6 +23,7 @@ transporter.verify((error) => {
 	}
 });
 
+//this is where the information that was submitted in Contact.js is compiled and sent
 router.post('/send', (req, res, next) => {
 	var name = req.body.name;
 	var email = req.body.email;
@@ -34,6 +36,7 @@ router.post('/send', (req, res, next) => {
 		subject: subject,
 		text: content,
 	};
+	console.log('hey!');
 	transporter.sendMail(mail, (err, data) => {
 		if (err) {
 			res.json({

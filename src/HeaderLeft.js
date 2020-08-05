@@ -9,17 +9,17 @@ function HeaderLeft() {
 					<div className="circle"></div>
 					<h1 className="title">dev</h1>
 				</div>
-				<div className="lines-top">
+				{/* <div className="lines-top">
 					<div></div>
 					<div></div>
-				</div>
+				</div> */}
 			</div>
 			<div className="main-header-div-bottom">
-				<div className="lines-bottom">
+				{/* <div className="lines-bottom">
 					<div></div>
 					<div></div>
 					<div></div>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);

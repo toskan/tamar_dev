@@ -29,6 +29,7 @@ class Contact extends React.Component {
 	resetForm = () => {
 		this.setState({ name: '', email: '', message: '' });
 	};
+	//where post request happens
 	handleSubmit = (e) => {
 		e.preventDefault();
 

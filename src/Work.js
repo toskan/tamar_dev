@@ -10,6 +10,7 @@ const Work = () => {
 	const [Modal, isModalOpen, setIsModalOpen] = UseModal();
 	const [activeSlideShow, setActiveSlideShow] = useState(null);
 	const toggleModalOpen = () => setIsModalOpen((prev) => !prev);
+	//this function searches inside images for an id that matches the uuid (the value was inserted in imagegrid.js in the map function)
 	const getSlideObject = (uuid) => {
 		const activeSlide = images.find(({ id }) => id === uuid);
 		setActiveSlideShow(activeSlide);

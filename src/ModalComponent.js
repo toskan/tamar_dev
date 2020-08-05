@@ -11,6 +11,7 @@ const ModalComponent = (props) => {
 	const closeButtonFunction = () => {
 		toggleModalOpen();
 	};
+	//if isModalOpen is true mount all of the content below and all its children to modalMount
 	return ReactDOM.createPortal(
 		<TransitionGroup component={null}>
 			{isModalOpen && (

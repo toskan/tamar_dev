@@ -1,23 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import MenuChange from './MenuChange';
 
-function Menu() {
+const Menu = () => {
+	const [MenuState, setIsMenuOpen] = useState(false);
 	return (
-		<div className="hamburger">
-			<h2 className="menu">menu</h2>
-			<ul className="menu-list" id="shrunken-bar-menu">
-				<li className="menu-list-item">
-					<Link to="/">home&nbsp;&nbsp;</Link>
-				</li>
-				<li className="menu-list-item">
-					<Link to="/work">work&nbsp;&nbsp;</Link>
-				</li>
-				<li className="menu-list-item">
-					<Link to="/contact">contact</Link>
-				</li>
-			</ul>
+		<div
+			onClick={() => {
+				setIsMenuOpen((prev) => !prev);
+			}}
+		>
+			<MenuChange MenuState={MenuState} />
 		</div>
 	);
-}
+};
 
 export default Menu;

@@ -6,7 +6,7 @@
 body {
 	font-family: 'Noto Sans JP', sans-serif;
 	margin: auto 0;
-	background-color: #7e7e7e;
+	background-color: whitesmoke;
 }
 #root {
 	opacity: 1;
@@ -21,13 +21,14 @@ body {
 	width: 100%;
 	margin: 0;
 }
-.header-div {
-	display: flex;
+.burger-header-div,
+.menu-header-div {
 	width: 100%;
+	display: flex;
 }
 .main-header-div {
-	color: white;
-	margin-right: 0.5em;
+	color: #1d1d1d;
+	margin-right: 1em;
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
@@ -49,7 +50,7 @@ body {
 	margin-left: 0.5em;
 	width: 1.4em;
 	height: 1.4em;
-	border: 0.2em solid #191970;
+	border: 0.2em solid #297a4d;
 	border-radius: 1.6em;
 	margin-top: 0.8em;
 }
@@ -58,9 +59,12 @@ body {
 }
 .lines-bottom > div {
 	margin-bottom: 0.4em;
-	border-bottom: 0.12em solid #191970;
-	border-top: 0.12em solid white;
+	border-bottom: 0.12em solid #297a4d;
+	border-top: 0.12em solid #1d1d1d;
 	height: 0.64em;
+}
+.lines-top > div:first-child {
+	border-top: none;
 }
 .lines-top {
 	width: 100%;
@@ -68,18 +72,34 @@ body {
 }
 .lines-top > div {
 	margin-bottom: 0.4em;
-	border-bottom: 0.12em solid #191970;
-	border-top: 0.12em solid white;
+	border-bottom: 0.12em solid #297a4d;
+	border-top: 0.12em solid #1d1d1d;
 	height: 0.64em;
 }
 .lines-bottom > div:first-child {
 	margin-top: 0;
 }
-.hamburger {
+.lines-bottom > div:last-child {
+	border-bottom: none;
+}
+.burger {
 	display: flex;
+	flex-direction: column;
 	justify-content: flex-end;
+	padding: 2em;
+}
+.open-menu {
+	display: flex;
+	justify-content: center;
 	padding-top: 1em;
 	height: 20vh;
+}
+.burger-button {
+	width: 6em;
+	height: 0.7em;
+	background: #3d3d3d;
+	margin: 0.5em;
+	border-radius: 1em;
 }
 .menu {
 	font-size: 3em;
@@ -87,7 +107,7 @@ body {
 	transform: rotate(-90deg);
 	font-weight: 300;
 	align-self: start;
-	color: #191970;
+	color: #297a4d;
 	margin-top: 1em;
 	margin-left: -0.8em;
 }
@@ -113,7 +133,7 @@ body {
 .menu-list-item > a {
 	font-size: 0.9em;
 	text-decoration: none;
-	color: white;
+	color: #1d1d1d;
 	outline: none;
 	cursor: pointer;
 	-webkit-transition: all 0.5s;
@@ -122,9 +142,15 @@ body {
 	transition-timing-function: ease-in-out;
 }
 .menu-list-item > a:hover {
-	color: #cacbce;
-	border-bottom: 0.1em solid #cacbce;
-	border-left: 0.1em solid #cacbce;
+	color: #5d5d5d;
+	border-bottom: 0.1em solid #5d5d5d;
+	border-left: 0.1em solid #5d5d5d;
 	padding-left: 0.2em;
 	margin-left: -0.3em;
+}
+
+@media screen and (max-width: 768px) {
+	.menu-header-div {
+		display: block;
+	}
 }

@@ -4,16 +4,16 @@ function Welcome() {
 	return (
 		<div className="welcome-div">
 			<div className="h2-div">
-				<h2 className="welcome-h2">welcome&nbsp;.</h2>
+				<h2 className="welcome-h2">hello&nbsp;.</h2>
 			</div>
 			<div className="p-intro">
-				<p>I'm Tamar, a NYC based front end web developer.</p>
+				<p>I'm a NYC based front end developer.</p>
 			</div>
 			<div className="skills-div">
 				<ul className="skills-list">
 					<li>css</li>
-					<li>Responsive Design</li>
-					<li>JavaScript</li>
+					<li>RWD</li>
+					<li>JS</li>
 					<li>jQuery</li>
 					<li>React</li>
 				</ul>

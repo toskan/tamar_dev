@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 const ImageGrid = (props) => {
 	const { images, setIsModalOpen, getSlideObject, isModalOpen } = props;
+	//populates the work page with the first url in projectImages
 	let imagesGrid = images.map((item, i) => (
 		<div className="grid-image-div" key={`${item}${i}`}>
 			<ImageHover

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 const ImageHover = (props) => {
 	const { setIsModalOpen, work, getSlideObject, isModalOpen, id } = props;
 	const [magnifyShow, setMagnifyShow] = useState(false);
+	//when modal open background goes opaque with a transition
 	if (isModalOpen) {
 		document.getElementById('root').classList.toggle('opaque');
 		document.getElementById('root').style.opacity = 0.1;
@@ -12,6 +13,7 @@ const ImageHover = (props) => {
 	if (!isModalOpen) {
 		document.getElementById('root').style.opacity = 1;
 	}
+	//getSlideObject(id) (see work.js) will get the object with all the necessary items for the current slide-show based on UUID value (line 14 work.js)
 	return (
 		<>
 			<img
