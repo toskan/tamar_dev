@@ -22,7 +22,7 @@ body {
 	margin: 0;
 }
 .burger-header-div,
-.menu-header-div {
+#menu-header-div {
 	width: 100%;
 	display: flex;
 }
@@ -150,7 +150,7 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-	.menu-header-div {
+	#menu-header-div {
 		display: block;
 	}
 }

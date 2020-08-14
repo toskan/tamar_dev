@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function OpenMenu() {
 	return (
-		<div className="menu-header-div">
+		<div id="menu-header-div">
 			<div className="main-header-div">
 				<div className="main-header-div-top">
 					<div className="title-div">
