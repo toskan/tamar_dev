@@ -28,7 +28,7 @@ function OpenMenu() {
 				<h2 className="menu">menu</h2>
 				<ul className="menu-list" id="shrunken-bar-menu">
 					<li className="menu-list-item">
-						<Link to="*">home&nbsp;&nbsp;&nbsp;&nbsp;</Link>
+						<Link to="/">home&nbsp;&nbsp;&nbsp;&nbsp;</Link>
 					</li>
 					<li className="menu-list-item">
 						<Link to="/work">portfolio</Link>
