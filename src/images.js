@@ -103,6 +103,5 @@ const images = [
 		],
 	},
 ];
-console.log(images[0].projectImgs);
 
 export default images;

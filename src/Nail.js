@@ -1,19 +1,17 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
 
-const Slide = ({ content }) => (
+const Nail = ({ content }) => (
 	<div
 		css={css`
-			height: 75%;
-			width: 100%;
 			display: flex;
-			justify-content: center;
+			width: 10%;
 		`}
 	>
 		<img
 			css={css`
-				height: 100%;
-				width: auto;
+				height: auto;
+				width: 80%;
 			`}
 			src={content}
 			alt="portfolio slide"
@@ -21,4 +19,4 @@ const Slide = ({ content }) => (
 	</div>
 );
 
-export default Slide;
+export default Nail;

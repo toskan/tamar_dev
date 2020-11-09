@@ -1,16 +1,23 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core';
 import SliderContent from './SliderContent';
 import Slide from './Slide';
 import images from './images';
 import Arrow from './Arrow';
 import './slider.css';
+import Thumbnail from './Thumbnails';
 
 /**
  * @function Slider
  */
 const Slider = (props) => {
 	const getWidth = () => window.innerWidth;
+
+	const [nailSelect, setNailSelect] = useState(true);
+
+	const [nailSelected, setNailSelected] = useState('');
+
+	const [slideNumber, setSlideNumber] = useState(0);
 
 	const [state, setState] = useState({
 		activeIndex: 0,
@@ -21,14 +28,6 @@ const Slider = (props) => {
 	const { translate, transition, activeIndex } = state;
 
 	const nextSlide = () => {
-		if (activeIndex === images.length - 1) {
-			return setState({
-				...state,
-				translate: 0,
-				activeIndex: 0,
-			});
-		}
-
 		setState({
 			...state,
 			activeIndex: activeIndex + 1,
@@ -37,38 +36,48 @@ const Slider = (props) => {
 	};
 
 	const prevSlide = () => {
-		if (activeIndex === 0) {
-			return setState({
-				...state,
-				translate: (images.length - 1) * getWidth(),
-				activeIndex: images.length - 1,
-			});
-		}
-
 		setState({
 			...state,
 			activeIndex: activeIndex - 1,
 			translate: (activeIndex - 1) * getWidth(),
 		});
 	};
+	useEffect(() => {
+		for (let i = 0; i < images.length; i++) {
+			if (nailSelected.includes(images[i].projectImgs[0].url)) {
+				setSlideNumber(i);
+			}
+		}
+	}, [nailSelected]);
 
 	return (
-		<div id="slider-div">
-			<SliderContent
-				translate={translate}
-				transition={transition}
-				width={getWidth() * images.length}
-			>
-				{images.map((item, i) => (
-					<Slide
-						key={`${item.id}`}
-						content={item.projectImgs[0].url}
-					/>
-				))}
-			</SliderContent>
-			<Arrow direction="left" handleClick={prevSlide} />
-			<Arrow direction="right" handleClick={nextSlide} />
-		</div>
+		<>
+			{/* {nailSelect && ( */}
+			<Thumbnail
+				setNailSelect={setNailSelect}
+				setNailSelected={setNailSelected}
+			/>
+			{/* )} */}
+			{/* {slideNumber && ( */}
+			<div id="slider-div">
+				<SliderContent
+					translate={translate}
+					transition={transition}
+					width={getWidth() * images[slideNumber].projectImgs.length}
+				>
+					{images[slideNumber].projectImgs.map((item, i) => (
+						<Slide key={`${item.url}`} content={item.url} />
+					))}
+				</SliderContent>
+				{activeIndex !== 0 && (
+					<Arrow direction="left" handleClick={prevSlide} />
+				)}
+				{activeIndex !== images[slideNumber].projectImgs.length - 1 && (
+					<Arrow direction="right" handleClick={nextSlide} />
+				)}
+			</div>
+			{/* )} */}
+		</>
 	);
 };
 

@@ -4,6 +4,28 @@
 	height: 80vh;
 	width: 100vw;
 }
+.nail-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	padding-bottom: 1em;
+}
+.thumbnail-div {
+	display: flex;
+	width: 7%;
+}
+.thumbnail-img {
+	height: auto;
+	width: 70%;
+}
+.thumbnail-div:hover {
+	transform: scale(1.2);
+}
+.project-link {
+	height: auto;
+	width: 1em;
+}
 
 /* .grid-image-div {
 	height: auto;
