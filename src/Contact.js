@@ -48,7 +48,7 @@ class Contact extends React.Component {
 	};
 	render() {
 		return (
-			<div className="content content-contact">
+			<div className="content-contact">
 				<div className="contact-me">
 					<h3>get in touch</h3>
 				</div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import images from './images';
+// import gitLogo from './github-mark-64px.png';
 
 const Thumbnail = (props) => {
 	// const [height, setHeight] = useState(null);
@@ -30,15 +31,12 @@ const Thumbnail = (props) => {
 						className="thumbnail-img"
 						src={item.projectImgs[0].url}
 					/>
-					<div>
+					<div className="project-link-div">
 						<a href={item.repoUrl}>
 							<img
-								className="project-link"
+								className="project-link-img"
 								alt="Project Link"
-								src={
-									process.env.PUBLIC_URL +
-									'/gitHub-mark-64px.png'
-								}
+								src="https://img-tamar-dev.s3.us-east-2.amazonaws.com/GitHub-Mark-64px.png"
 							/>
 						</a>
 					</div>

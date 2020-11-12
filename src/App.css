@@ -17,7 +17,7 @@ body {
 	transition: opacity 0.3s linear;
 }
 .main {
-	height: 100%;
+	height: 100vh;
 	width: 100%;
 	margin: 0;
 }
@@ -93,6 +93,7 @@ body {
 	justify-content: center;
 	padding-top: 1em;
 	height: 20vh;
+	/* display: none; */
 }
 .burger-button {
 	width: 6em;

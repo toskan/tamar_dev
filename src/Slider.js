@@ -6,6 +6,7 @@ import images from './images';
 import Arrow from './Arrow';
 import './slider.css';
 import Thumbnail from './Thumbnails';
+import ClickPrompt from './ClickPrompt';
 
 /**
  * @function Slider
@@ -52,31 +53,33 @@ const Slider = (props) => {
 
 	return (
 		<>
-			{/* {nailSelect && ( */}
 			<Thumbnail
 				setNailSelect={setNailSelect}
 				setNailSelected={setNailSelected}
 			/>
-			{/* )} */}
-			{/* {slideNumber && ( */}
-			<div id="slider-div">
-				<SliderContent
-					translate={translate}
-					transition={transition}
-					width={getWidth() * images[slideNumber].projectImgs.length}
-				>
-					{images[slideNumber].projectImgs.map((item, i) => (
-						<Slide key={`${item.url}`} content={item.url} />
-					))}
-				</SliderContent>
-				{activeIndex !== 0 && (
-					<Arrow direction="left" handleClick={prevSlide} />
-				)}
-				{activeIndex !== images[slideNumber].projectImgs.length - 1 && (
-					<Arrow direction="right" handleClick={nextSlide} />
-				)}
-			</div>
-			{/* )} */}
+			{nailSelect && <ClickPrompt />}
+			{!nailSelect && (
+				<div id="slider-div">
+					<SliderContent
+						translate={translate}
+						transition={transition}
+						width={
+							getWidth() * images[slideNumber].projectImgs.length
+						}
+					>
+						{images[slideNumber].projectImgs.map((item, i) => (
+							<Slide key={`${item.url}`} content={item.url} />
+						))}
+					</SliderContent>
+					{activeIndex !== 0 && (
+						<Arrow direction="left" handleClick={prevSlide} />
+					)}
+					{activeIndex !==
+						images[slideNumber].projectImgs.length - 1 && (
+						<Arrow direction="right" handleClick={nextSlide} />
+					)}
+				</div>
+			)}
 		</>
 	);
 };

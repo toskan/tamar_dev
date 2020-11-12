@@ -11,13 +11,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
-	height: 20%;
+	padding: 0.5em;
 }
 .h2-div {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 50%;
+	padding: 3em;
 }
 .welcome-h2 {
 	font-size: 7em;
@@ -28,7 +28,7 @@
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
-	height: 30%;
+	padding: 3em;
 }
 .skills-list {
 	color: #297a4d;
@@ -38,4 +38,19 @@
 .skills-list > li {
 	display: inline-block;
 	margin-right: 2em;
+}
+#portfolio-arrow-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: fixed;
+	bottom: 0em;
+}
+#portfolio-link {
+	font-size: 3em;
+	color: #1d1d1d;
+	text-decoration: none;
+}
+#portfolio-arrow-div:hover {
+	transform: scale(1.1);
 }
