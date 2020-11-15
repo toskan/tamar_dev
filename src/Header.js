@@ -1,12 +1,11 @@
 import React from 'react';
-import HeaderLeft from './HeaderLeft';
-import Menu from './Menu';
+import OpenMenu from './OpenMenu';
 
 class Header extends React.Component {
 	render() {
 		return (
-			<div>
-				<Menu />
+			<div className="header-div">
+				<OpenMenu />
 			</div>
 		);
 	}

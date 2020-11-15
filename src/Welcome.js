@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 // import PortfolioArrowDown from './PortfolioArrowDown';
+import { Link } from 'react-router-dom';
+import { AiOutlineDoubleRight } from 'react-icons/ai';
+import { IconContext } from 'react-icons';
 
 function Welcome() {
 	// const [center, setCenter] = useState(0);
@@ -18,8 +21,22 @@ function Welcome() {
 			</div>
 			<div className="p-intro">
 				<p>
-					I'm a NYC based front end developer. Please, check out my
-					portfolio.
+					I'm Tamar, a NYC based front end developer.
+					<br />
+					<br />
+					Please, check out my{' '}
+					<Link to="/work" className="portfolio-text-link">
+						portfolio
+						<IconContext.Provider
+							value={{
+								size: '1em',
+								color: '#1d1d1d',
+								className: 'global-class-name',
+							}}
+						>
+							<AiOutlineDoubleRight />
+						</IconContext.Provider>
+					</Link>
 				</p>
 			</div>
 			<div className="skills-div">

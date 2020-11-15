@@ -52,7 +52,7 @@ const Slider = (props) => {
 	}, [nailSelected]);
 
 	return (
-		<>
+		<div className="content">
 			<Thumbnail
 				setNailSelect={setNailSelect}
 				setNailSelected={setNailSelected}
@@ -80,7 +80,7 @@ const Slider = (props) => {
 					)}
 				</div>
 			)}
-		</>
+		</div>
 	);
 };
 

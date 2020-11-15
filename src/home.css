@@ -3,32 +3,52 @@
 	flex-direction: column;
 	height: 100%;
 	width: 100%;
-	justify-content: center;
 }
 .p-intro {
 	color: #1d1d1d;
-	font-size: 2em;
+	font-size: 1.8em;
 	display: flex;
 	justify-content: center;
-	align-items: flex-start;
-	padding: 0.5em;
+	height: 15%;
+	margin: 0 1em 0 1em;
+}
+.p-intro p {
+	align-self: center;
+}
+.portfolio-text-link {
+	text-decoration: none;
+	color: #1d1d1d;
+	outline: none;
+	cursor: pointer;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	-webkit-transition-timing-function: ease-in-out;
+	transition-timing-function: ease-in-out;
+}
+.portfolio-text-link:hover {
+	color: #5d5d5d;
+}
+.global-class-name {
+	position: relative;
+	top: 0.17em;
+	left: 0.1em;
 }
 .h2-div {
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	padding: 3em;
+	height: 35%;
 }
 .welcome-h2 {
-	font-size: 7em;
+	font-size: 5.5em;
 	font-weight: 100;
 	color: #297a4d;
+	padding-bottom: 0.3em;
 }
 .skills-div {
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
-	padding: 3em;
+	height: 50%;
 }
 .skills-list {
 	color: #297a4d;
@@ -38,6 +58,11 @@
 .skills-list > li {
 	display: inline-block;
 	margin-right: 2em;
+}
+.skills-list > li:first-child {
+	display: inline-block;
+	margin-right: 2em;
+	margin-left: 2em;
 }
 #portfolio-arrow-div {
 	display: flex;
