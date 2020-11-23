@@ -27,16 +27,8 @@ function Welcome() {
 					Please, check out my{' '}
 					<Link to="/work" className="portfolio-text-link">
 						portfolio
-						<IconContext.Provider
-							value={{
-								size: '1em',
-								color: '#1d1d1d',
-								className: 'global-class-name',
-							}}
-						>
-							<AiOutlineDoubleRight />
-						</IconContext.Provider>
 					</Link>
+					.
 				</p>
 			</div>
 			<div className="skills-div">
