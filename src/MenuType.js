@@ -7,8 +7,7 @@ const MenuType = ({ menuState, setMenuState }) => {
 		(window.matchMedia('(max-width: 414px)').matches &&
 			window.matchMedia('(orientation: portrait)').matches) ||
 		(window.matchMedia('(max-width: 823px)').matches &&
-			window.matchMedia('(orientation: landscape)').matches &&
-			!menuState)
+			window.matchMedia('(orientation: landscape)').matches)
 	) {
 		return <Burger setMenuState={setMenuState} menuState={menuState} />;
 	} else {

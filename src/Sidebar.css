@@ -8,7 +8,7 @@
 }
 /* Position and sizing of burger button */
 .bm-burger-button {
-	position: fixed;
+	position: relative;
 	width: 36px;
 	height: 30px;
 	left: 36px;
@@ -45,6 +45,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-menu-wrap {
 	position: fixed;
 	height: 100%;
+	top: 0;
 }
 
 /* General sidebar styles */

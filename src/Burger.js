@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Burger = ({ menuState, setMenuState }) => {
 	return (
 		<div id="outer-container" onClick={() => setMenuState((prev) => !prev)}>
-			<Menu width={210} isOpen={menuState}>
+			<Menu width={175} isOpen={menuState}>
 				<main id="page-wrap">
 					<div className="burger-nav-div">
 						<h2 className="menu burger-menu">menu</h2>
