@@ -30,6 +30,7 @@ const Thumbnail = (props) => {
 					<img
 						className="thumbnail-img"
 						src={item.projectImgs[0].url}
+						alt="portfolio-thumbnail"
 					/>
 					<div className="project-link-div">
 						<a href={item.repoUrl}>

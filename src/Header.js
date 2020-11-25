@@ -1,11 +1,11 @@
 import React from 'react';
-import OpenMenu from './OpenMenu';
+import Menu from './Menu';
 
 class Header extends React.Component {
 	render() {
 		return (
 			<div className="header-div">
-				<OpenMenu />
+				<Menu />
 			</div>
 		);
 	}

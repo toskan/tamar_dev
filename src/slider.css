@@ -9,16 +9,18 @@
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	padding-bottom: 1em;
+	padding: 1.5em 0 1em 0;
+	width: 100%;
+	flex-wrap: wrap;
 }
 .thumbnail-div {
 	display: flex;
-	width: 7%;
+	width: 15%;
 	margin: 1.5em;
 }
 .thumbnail-img {
 	height: auto;
-	width: 70%;
+	width: 100%;
 }
 .thumbnail-div:hover {
 	transform: scale(1.3);
@@ -35,4 +37,5 @@
 	display: flex;
 	width: 100%;
 	justify-content: center;
+	margin-bottom: 5em;
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { css, jsx } from '@emotion/core';
+// import { css, jsx } from '@emotion/core';
 import SliderContent from './SliderContent';
 import Slide from './Slide';
 import images from './images';

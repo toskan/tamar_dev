@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MenuType from './MenuType';
 import './Sidebar.css';
 
-const OpenMenu = () => {
+const Menu = () => {
 	const [menuState, setMenuState] = useState(false);
 	useEffect(() => {
 		const content = document.getElementsByClassName('content');
@@ -22,7 +22,6 @@ const OpenMenu = () => {
 			for (let i = 0; i < title.length; i++) {
 				title[i].classList.toggle('title-burger', false);
 			}
-			console.log(menuState + false);
 			titleDiv[0].classList.toggle('title-div-menu-full-burger', true);
 			circle[0].classList.toggle('circle-menu-full-burger', true);
 			for (let i = 0; i < title.length; i++) {
@@ -61,4 +60,4 @@ const OpenMenu = () => {
 	);
 };
 
-export default OpenMenu;
+export default Menu;
