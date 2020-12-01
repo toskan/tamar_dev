@@ -9,7 +9,7 @@ const Arrow = ({ direction, handleClick }) => (
 		css={css`
 			display: flex;
 			position: absolute;
-			top: 40%;
+			top: 50%;
 			${direction === 'right' ? `right: 25px` : `left: 25px`};
 			height: 50px;
 			width: 50px;

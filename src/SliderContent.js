@@ -6,6 +6,7 @@ const SliderContent = styled.div`
 	height: 100vh;
 	width: ${(props) => props.width}px;
 	display: flex;
+	align-items: center;
 `;
 
 export default SliderContent;

@@ -4,7 +4,7 @@ import { css, jsx } from '@emotion/core';
 const Slide = ({ content }) => (
 	<div
 		css={css`
-			height: 75%;
+			height: 80%;
 			width: 100%;
 			display: flex;
 			justify-content: center;

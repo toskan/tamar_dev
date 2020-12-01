@@ -1,8 +1,7 @@
 #slider-div {
-	position: relative;
+	position: absolute;
 	overflow: hidden;
-	height: 80vh;
-	width: 100vw;
+	top: 0;
 }
 .nail-div {
 	display: flex;
@@ -16,7 +15,7 @@
 .thumbnail-div {
 	display: flex;
 	width: 15%;
-	margin: 1.5em;
+	margin: 2.5em;
 }
 .thumbnail-img {
 	height: auto;
@@ -27,6 +26,11 @@
 }
 /* .project-link-div:hover {
 	transform: scale(1.2);
+} */
+/* .project-link-div {
+	position: absolute;
+	top: 0.5em;
+	right: 0.5em;
 } */
 .project-link-img {
 	height: auto;
