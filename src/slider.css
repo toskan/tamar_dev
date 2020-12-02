@@ -27,19 +27,28 @@
 /* .project-link-div:hover {
 	transform: scale(1.2);
 } */
-/* .project-link-div {
-	position: absolute;
-	top: 0.5em;
-	right: 0.5em;
-} */
+.project-link-div {
+	position: relative;
+	top: 2%;
+	left: 0.9em;
+}
 .project-link-img {
-	height: auto;
-	width: 1em;
-	margin-left: 0.5em;
+	height: 50px;
+	width: auto;
 }
 .click-prompt-div {
 	display: flex;
 	width: 100%;
 	justify-content: center;
 	margin-bottom: 5em;
+}
+.close-button {
+	position: relative;
+	bottom: 8%;
+	/* left: 1.9em; */
+	height: 50px;
+	width: 50px;
+	color: #1d1d1d;
+	background-color: white;
+	border-radius: 50%;
 }

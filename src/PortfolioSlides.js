@@ -3,10 +3,15 @@ import SliderContent from './SliderContent';
 import Slide from './Slide';
 import ArrowComponent from './ArrowComponent';
 
-const PortfolioSlides = ({ images, slideNumber, nailSelect }) => {
+const PortfolioSlides = ({
+	images,
+	slideNumber,
+	nailSelect,
+	setNailSelect,
+}) => {
 	const getWidth = () => window.innerWidth;
 
-	const [activeIndex, setActiveIndex] = useState(1);
+	const [activeIndex, setActiveIndex] = useState(0);
 
 	const [translate, setTranslate] = useState(0);
 
@@ -21,7 +26,6 @@ const PortfolioSlides = ({ images, slideNumber, nailSelect }) => {
 		setActiveIndex(activeIndex - 1);
 		setTranslate((activeIndex - 1) * getWidth());
 	};
-	console.log(activeIndex);
 	return (
 		<div>
 			{!nailSelect && (
@@ -34,7 +38,15 @@ const PortfolioSlides = ({ images, slideNumber, nailSelect }) => {
 						}
 					>
 						{images[slideNumber].projectImgs.map((item, i) => (
-							<Slide key={`${item.url}`} content={item.url} />
+							<Slide
+								key={`${item.url}`}
+								content={item.url}
+								height={`${item.orientation}`}
+								gitHubUrl={images[slideNumber].repoUrl}
+								setNailSelect={setNailSelect}
+								setActiveIndex={setActiveIndex}
+								setTranslate={setTranslate}
+							/>
 						))}
 					</SliderContent>
 					<ArrowComponent

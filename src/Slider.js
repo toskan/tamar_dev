@@ -47,6 +47,7 @@ const Slider = (props) => {
 			<PortfolioSlides
 				images={images}
 				slideNumber={slideNumber}
+				setNailSelect={setNailSelect}
 				nailSelect={nailSelect}
 			/>
 		</>

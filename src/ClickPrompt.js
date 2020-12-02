@@ -6,7 +6,7 @@ const ClickPrompt = () => {
 		<div className="click-prompt-div">
 			<h3 className="click-promp-h3">
 				<BsArrow90DegUp />
-				&nbsp;&nbsp;click thumbnail &#38; logo for more
+				&nbsp;&nbsp;click thumbnail for more
 			</h3>
 		</div>
 	);

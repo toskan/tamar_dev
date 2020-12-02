@@ -8,7 +8,6 @@ const ArrowComponent = ({
 	slideNumber,
 	nextSlide,
 }) => {
-	console.log(activeIndex);
 	return (
 		<>
 			{activeIndex !== 0 && (
