@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SliderContent from './SliderContent';
+import PortfolioContent from './PortfolioContent';
 import Slide from './Slide';
 import ArrowComponent from './ArrowComponent';
 
@@ -29,8 +29,8 @@ const PortfolioSlides = ({
 	return (
 		<div>
 			{!nailSelect && (
-				<div id="slider-div">
-					<SliderContent
+				<div id="portfolio-div">
+					<PortfolioContent
 						translate={translate}
 						transition={transition}
 						width={
@@ -48,7 +48,7 @@ const PortfolioSlides = ({
 								setTranslate={setTranslate}
 							/>
 						))}
-					</SliderContent>
+					</PortfolioContent>
 					<ArrowComponent
 						images={images}
 						slideNumber={slideNumber}

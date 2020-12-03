@@ -175,3 +175,9 @@ body,
 /* tablets */
 /* @media screen and (max-width: 768px) and (orientation: portrait) */
 /* @media screen and (max-width: 1024px) and (orientation: landscape)  */
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+	.header-div {
+		height: 26vh;
+	}
+}

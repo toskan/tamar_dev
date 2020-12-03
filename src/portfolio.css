@@ -1,0 +1,72 @@
+#portfolio-div {
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+}
+.nail-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	padding: 1.5em 0 1em 0;
+	width: 100%;
+	flex-wrap: wrap;
+}
+.thumbnail-div {
+	display: flex;
+	width: 15%;
+	margin: 2.5em;
+	transition: transform ease-in 0.1s;
+}
+.thumbnail-img {
+	height: auto;
+	width: 100%;
+}
+.thumbnail-div:hover {
+	transform: scale(1.1);
+}
+.project-link-img:hover {
+	transform: scale(1.1);
+}
+.project-link-div {
+	position: relative;
+	top: 3.5%;
+	left: 0.9em;
+}
+.project-link-img {
+	height: 30px;
+	width: auto;
+	transition: transform ease-in 0.1s;
+}
+.click-prompt-div {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	margin-top: 5em;
+}
+.click-prompt-h3 {
+	font-size: 1.5em;
+}
+.close-button {
+	position: relative;
+	top: 2%;
+	left: 1.9em;
+	height: 50px;
+	width: 50px;
+	color: #1d1d1d;
+	background-color: white;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: transform ease-in 0.1s;
+}
+.close-button:hover {
+	transform: scale(1.1);
+}
+
+/* mobile  */
+/* @media screen and (max-width: 414px) and (orientation: portrait) */
+/* @media screen and (max-width: 823px) and (orientation: landscape)  */
+
+/* tablets */
+/* @media screen and (max-width: 768px) and (orientation: portrait) */
+/* @media screen and (max-width: 1024px) and (orientation: landscape)  */

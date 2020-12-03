@@ -6,7 +6,7 @@ const Menu = () => {
 	const [menuState, setMenuState] = useState(false);
 	useEffect(() => {
 		const content = document.getElementsByClassName('content');
-		const portfolioDiv = document.getElementsByClassName('portfolio-div');
+		const portfolioDiv = document.getElementsByClassName('portfolio');
 		const titleDiv = document.getElementsByClassName('title-div');
 		const title = document.getElementsByClassName('title');
 		const circle = document.getElementsByClassName('circle');

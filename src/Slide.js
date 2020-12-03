@@ -27,7 +27,7 @@ const Slide = ({
 			alt="portfolio slide"
 		/>
 		<div className="project-link-div">
-			<a href={gitHubUrl}>
+			<a href={gitHubUrl} target="_blank" rel="noopener noreferer">
 				<img
 					className="project-link-img"
 					alt="Project Link"

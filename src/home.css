@@ -77,9 +77,6 @@
 }
 
 @media screen and (max-width: 1024px) and (orientation: landscape) {
-	.header-div {
-		height: 20vh;
-	}
 }
 
 /* mobile */

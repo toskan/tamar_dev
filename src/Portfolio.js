@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 // import { css, jsx } from '@emotion/core';
 import images from './images';
-import './slider.css';
+import './portfolio.css';
 import Thumbnail from './Thumbnails';
 import ClickPrompt from './ClickPrompt';
 import PortfolioSlides from './PortfolioSlides';
 
 /**
- * @function Slider
+ * @function Portfolio
  */
-const Slider = (props) => {
+const Portfolio = (props) => {
 	const [nailSelect, setNailSelect] = useState(true);
 
 	const [nailSelected, setNailSelected] = useState('');
@@ -25,24 +25,25 @@ const Slider = (props) => {
 	}, [nailSelected]);
 
 	useEffect(() => {
-		const portfolioDiv = document.getElementsByClassName(
-			'portfolio-div'
-		)[0];
+		const portfolioDiv = document.getElementsByClassName('portfolio')[0];
+		const navDiv = document.getElementsByClassName('side-nav-div')[0];
 		if (!nailSelect) {
 			portfolioDiv.style.display = 'none';
+			navDiv.style.display = 'none';
 		} else {
 			portfolioDiv.style.display = 'block';
+			navDiv.style.display = 'flex';
 		}
 	}, [nailSelect]);
 
 	return (
 		<>
-			<div className="portfolio-div">
+			<div className="portfolio">
+				<ClickPrompt />
 				<Thumbnail
 					setNailSelect={setNailSelect}
 					setNailSelected={setNailSelected}
 				/>
-				{nailSelect && <ClickPrompt />}
 			</div>
 			<PortfolioSlides
 				images={images}
@@ -54,4 +55,4 @@ const Slider = (props) => {
 	);
 };
 
-export default Slider;
+export default Portfolio;

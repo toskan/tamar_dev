@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { RiCloseLine } from 'react-icons/ri';
 
 const CloseAndLink = ({ setNailSelect, setActiveIndex, setTranslate }) => {
