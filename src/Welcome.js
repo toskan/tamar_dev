@@ -13,7 +13,7 @@ function Welcome() {
 					<br />
 					<br />
 					Please, check out my{' '}
-					<Link to="/work" className="portfolio-text-link">
+					<Link to="/portfolio" className="portfolio-text-link">
 						portfolio
 					</Link>
 					.

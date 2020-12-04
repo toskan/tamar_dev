@@ -1,46 +1,52 @@
 /** @jsx jsx */
+import React, { useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core';
-import CloseAndLink from './CloseAndLink';
 
-const Slide = ({
-	content,
-	height,
-	setNailSelect,
-	setActiveIndex,
-	setTranslate,
-	gitHubUrl,
-}) => (
-	<div
-		css={css`
-			height: ${height === 'portrait' ? `80%` : `55%`};
-			width: 100%;
-			display: flex;
-			justify-content: center;
-		`}
-	>
-		<img
+const Slide = ({ content, orientation, mobile }) => {
+	const [height, setHeight] = useState(0);
+
+	// const mobilePortrait =
+	// 	window.matchMedia('(max-width: 414px)').matches &&
+	// 	window.matchMedia('(orientation: portrait)').matches;
+
+	// const mobileLandscape =
+	// 	window.matchMedia('(max-width: 823px)').matches &&
+	// 	window.matchMedia('(orientation: landscape)').matches;
+	useEffect(() => {
+		if (mobile.portrait && orientation === 'portrait') {
+			setHeight('45%');
+		}
+		if (mobile.portrait && orientation === 'landscape') {
+			setHeight('25%');
+		}
+		if (!mobile.eitherOr && orientation === 'portrait') {
+			setHeight('80%');
+		}
+		if (!mobile.eitherOr && orientation === 'landscape') {
+			setHeight('55%');
+		}
+	}, [orientation, mobile]);
+
+	return (
+		<div
 			css={css`
-				height: 100%;
-				width: auto;
+				height: ${height};
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				margin-top: 2em;
 			`}
-			src={content}
-			alt="portfolio slide"
-		/>
-		<div className="project-link-div">
-			<a href={gitHubUrl} target="_blank" rel="noopener noreferer">
-				<img
-					className="project-link-img"
-					alt="Project Link"
-					src="https://img-tamar-dev.s3.us-east-2.amazonaws.com/GitHub-Mark-64px.png"
-				/>
-			</a>
+		>
+			<img
+				css={css`
+					height: 100%;
+					width: auto;
+				`}
+				src={content}
+				alt="portfolio slide"
+			/>
 		</div>
-		<CloseAndLink
-			setNailSelect={setNailSelect}
-			setActiveIndex={setActiveIndex}
-			setTranslate={setTranslate}
-		/>
-	</div>
-);
+	);
+};
 
 export default Slide;

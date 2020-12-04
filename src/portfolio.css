@@ -29,9 +29,9 @@
 	transform: scale(1.1);
 }
 .project-link-div {
-	position: relative;
-	top: 3.5%;
-	left: 0.9em;
+	position: fixed;
+	top: 13.8%;
+	right: 11.5%;
 }
 .project-link-img {
 	height: 30px;
@@ -42,15 +42,15 @@
 	display: flex;
 	width: 100%;
 	justify-content: center;
-	margin-top: 5em;
+	margin-top: 2em;
 }
 .click-prompt-h3 {
 	font-size: 1.5em;
 }
 .close-button {
-	position: relative;
-	top: 2%;
-	left: 1.9em;
+	position: fixed;
+	top: 13%;
+	right: 5%;
 	height: 50px;
 	width: 50px;
 	color: #1d1d1d;
@@ -67,6 +67,33 @@
 /* @media screen and (max-width: 414px) and (orientation: portrait) */
 /* @media screen and (max-width: 823px) and (orientation: landscape)  */
 
+@media screen and (max-width: 414px) and (orientation: portrait) {
+	.project-link-div {
+		top: 20.5%;
+		right: 20%;
+	}
+	.close-button {
+		top: 20%;
+		right: 5%;
+		height: 40px;
+		width: 40px;
+	}
+	.click-prompt-h3 {
+		font-size: 1.3em;
+	}
+}
+
 /* tablets */
 /* @media screen and (max-width: 768px) and (orientation: portrait) */
 /* @media screen and (max-width: 1024px) and (orientation: landscape)  */
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+	.project-link-div {
+		top: 12%;
+		right: 12%;
+	}
+	.close-button {
+		top: 11%;
+		right: 5%;
+	}
+}

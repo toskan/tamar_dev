@@ -9,7 +9,7 @@ class Router extends React.Component {
 		return (
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/work" element={<Portfolio />} />
+				<Route path="/portfolio" element={<Portfolio />} />
 				<Route path="/contact" element={<Contact />} />
 			</Routes>
 		);

@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import PortfolioContent from './PortfolioContent';
 import Slide from './Slide';
 import ArrowComponent from './ArrowComponent';
+import CloseAndLink from './CloseAndLink';
 
 const PortfolioSlides = ({
 	images,
 	slideNumber,
 	nailSelect,
 	setNailSelect,
+	mobile,
 }) => {
 	const getWidth = () => window.innerWidth;
 
@@ -41,11 +43,11 @@ const PortfolioSlides = ({
 							<Slide
 								key={`${item.url}`}
 								content={item.url}
-								height={`${item.orientation}`}
-								gitHubUrl={images[slideNumber].repoUrl}
+								orientation={`${item.orientation}`}
 								setNailSelect={setNailSelect}
 								setActiveIndex={setActiveIndex}
 								setTranslate={setTranslate}
+								mobile={mobile}
 							/>
 						))}
 					</PortfolioContent>
@@ -55,6 +57,13 @@ const PortfolioSlides = ({
 						nextSlide={nextSlide}
 						prevSlide={prevSlide}
 						activeIndex={activeIndex}
+					/>
+					<CloseAndLink
+						setNailSelect={setNailSelect}
+						setActiveIndex={setActiveIndex}
+						setTranslate={setTranslate}
+						images={images}
+						slideNumber={slideNumber}
 					/>
 				</div>
 			)}

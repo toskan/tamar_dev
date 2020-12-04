@@ -17,7 +17,7 @@ const Burger = ({ menuState, setMenuState }) => {
 								<Link to="/">home</Link>
 							</li>
 							<li className="menu-list-item">
-								<Link to="/work">portfolio</Link>
+								<Link to="/portfolio">portfolio</Link>
 							</li>
 							<li className="menu-list-item">
 								<Link to="/contact">contact</Link>
