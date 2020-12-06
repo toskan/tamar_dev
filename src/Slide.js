@@ -1,18 +1,10 @@
 /** @jsx jsx */
-import React, { useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core';
+import React from 'react';
 
 const Slide = ({ content, orientation, mobile }) => {
-	const [height, setHeight] = useState(0);
-
-	// const mobilePortrait =
-	// 	window.matchMedia('(max-width: 414px)').matches &&
-	// 	window.matchMedia('(orientation: portrait)').matches;
-
-	// const mobileLandscape =
-	// 	window.matchMedia('(max-width: 823px)').matches &&
-	// 	window.matchMedia('(orientation: landscape)').matches;
-	useEffect(() => {
+	const [height, setHeight] = React.useState(0);
+	React.useEffect(() => {
 		if (mobile.portrait && orientation === 'portrait') {
 			setHeight('45%');
 		}

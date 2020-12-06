@@ -1,14 +1,14 @@
 /** @jsx jsx */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { css, jsx } from '@emotion/core';
 import leftArrow from './img/left-arrow.svg';
 import rightArrow from './img/right-arrow.svg';
 import mobile from './mobile';
 
 const Arrow = ({ direction, handleClick }) => {
-	const [size, setSize] = useState(0);
-	const [margin, setMargin] = useState(0);
-	useEffect(() => {
+	const [size, setSize] = React.useState(0);
+	const [margin, setMargin] = React.useState(0);
+	React.useEffect(() => {
 		if (mobile.eitherOr) {
 			setSize('35px');
 			setMargin('15px');
