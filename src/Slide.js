@@ -37,14 +37,16 @@ const Slide = ({ content, orientation, mobile }) => {
 				margin-top: 2em;
 			`}
 		>
-			<img
+			<video
 				css={css`
 					height: 100%;
 					width: auto;
 				`}
-				src={content}
-				alt="portfolio slide"
-			/>
+				autoPlay
+				loop
+			>
+				<source src={content} type="video/mp4" />
+			</video>
 		</div>
 	);
 };

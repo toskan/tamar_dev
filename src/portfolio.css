@@ -14,7 +14,7 @@
 }
 .thumbnail-div {
 	display: flex;
-	width: 15%;
+	width: 10%;
 	margin: 2.5em;
 	transition: transform ease-in 0.1s;
 }
@@ -23,7 +23,7 @@
 	width: 100%;
 }
 .thumbnail-div:hover {
-	transform: scale(1.1);
+	transform: scale(1.04);
 }
 .project-link-img:hover {
 	transform: scale(1.1);

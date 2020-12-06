@@ -41,8 +41,8 @@ const PortfolioSlides = ({
 					>
 						{images[slideNumber].projectImgs.map((item, i) => (
 							<Slide
-								key={`${item.url}`}
-								content={item.url}
+								key={`${item.video}`}
+								content={item.video}
 								orientation={`${item.orientation}`}
 								setNailSelect={setNailSelect}
 								setActiveIndex={setActiveIndex}

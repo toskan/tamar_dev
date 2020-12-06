@@ -7,16 +7,21 @@ const images = [
 		repoUrl: 'https://github.com/toskan/ancient-egypt-themed-game',
 		projectImgs: [
 			{
-				url: process.env.PUBLIC_URL + '/egypt_screenshot.mobile.png',
+				url:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/egypt_screenshot.mobile.png',
+				video:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/egypt_2_landscape.mp4',
+				orientation: 'landscape',
+			},
+			{
+				video:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/egypt_3_landscape.mp4',
+				orientation: 'landscape',
+			},
+			{
+				video:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/egypt_1_portrait.mp4',
 				orientation: 'portrait',
-			},
-			{
-				url: process.env.PUBLIC_URL + '/egypt_2_screenshot.png',
-				orientation: 'landscape',
-			},
-			{
-				url: process.env.PUBLIC_URL + '/egypt_screenshot.png',
-				orientation: 'landscape',
 			},
 		],
 	},
@@ -26,16 +31,16 @@ const images = [
 		repoUrl: 'https://github.com/toskan/ancient-greece-themed-game',
 		projectImgs: [
 			{
-				url: process.env.PUBLIC_URL + '/greco_screenshot_mobile_2.png',
+				url:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/greco_screenshot_mobile_2.png',
+				video:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/greco_1_porrait.mp4',
 				orientation: 'portrait',
 			},
 			{
-				url: process.env.PUBLIC_URL + '/greco_screenshot_mobile.png',
+				video:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/greco_2_portrait.mp4',
 				orientation: 'portrait',
-			},
-			{
-				url: process.env.PUBLIC_URL + '/greco_screenshot.png',
-				orientation: 'landscape',
 			},
 		],
 	},
@@ -45,23 +50,20 @@ const images = [
 		repoUrl: 'https://github.com/toskan/gmapreviews',
 		projectImgs: [
 			{
-				url: process.env.PUBLIC_URL + '/map_api_cell_screenshot_2.png',
+				url:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/map_api_cell_screenshot_2.png',
+				video:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/map_1_portrait.mp4',
 				orientation: 'portrait',
 			},
 			{
-				url: process.env.PUBLIC_URL + '/map_api_cell_screenshot_3.png',
-				orientation: 'portrait',
-			},
-			{
-				url: process.env.PUBLIC_URL + '/mobile_map_api_screenshot.png',
-				orientation: 'portrait',
-			},
-			{
-				url: process.env.PUBLIC_URL + '/map_api_screenshot.png',
+				video:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/map_1_landscape.mp4',
 				orientation: 'landscape',
 			},
 			{
-				url: process.env.PUBLIC_URL + '/map_api_cell_screenshot.png',
+				video:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/map_2_portrait.mp4',
 				orientation: 'portrait',
 			},
 		],
@@ -73,17 +75,25 @@ const images = [
 		projectImgs: [
 			{
 				url:
-					process.env.PUBLIC_URL +
-					'/news_api_screenshot_mobile_2.png',
-				orientation: 'portrait',
-			},
-			{
-				url: process.env.PUBLIC_URL + '/news_api_screenshot_mobile.png',
-				orientation: 'portrait',
-			},
-			{
-				url: process.env.PUBLIC_URL + '/news_api_screenshot.png',
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/news_api_screenshot_mobile_2.png',
+				video:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/news_1_landscape.mp4',
 				orientation: 'landscape',
+			},
+			{
+				video:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/news_2_landscape.mp4',
+				orientation: 'landscape',
+			},
+			{
+				video:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/news_2_portrait.mp4',
+				orientation: 'portrait',
+			},
+			{
+				video:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/news_1_portrait.mp4',
+				orientation: 'portrait',
 			},
 		],
 	},
@@ -93,11 +103,15 @@ const images = [
 		repoUrl: 'https://github.com/toskan/weatherApi',
 		projectImgs: [
 			{
-				url: process.env.PUBLIC_URL + '/weather_app_screenshot_2.png',
+				url:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/weather_app_screenshot.png',
+				video:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/weather_1_portrait.mp4',
 				orientation: 'portrait',
 			},
 			{
-				url: process.env.PUBLIC_URL + '/weather_app_screenshot.png',
+				video:
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/weather_2_portrait.mp4',
 				orientation: 'portrait',
 			},
 		],
