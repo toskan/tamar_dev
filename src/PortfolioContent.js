@@ -8,6 +8,7 @@ const PortfolioContent = styled.div`
 	display: flex;
 	align-items: center;
 	overflow-x: hidden;
+	position: fixed;
 `;
 
 export default PortfolioContent;
