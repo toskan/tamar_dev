@@ -90,6 +90,8 @@
 	}
 	.thumbnail-div {
 		width: 20%;
+	}
+	.thumbnail-img {
 		align-self: flex-start;
 	}
 }
