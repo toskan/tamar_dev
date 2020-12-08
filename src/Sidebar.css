@@ -1,4 +1,11 @@
-.burger-nav-div {
+.burger-nav-div:focus {
+	outline: none;
+}
+.burger-menu-list:focus {
+	outline: none;
+}
+.bm-item:focus {
+	outline: none;
 }
 .burger-menu {
 	margin-left: 0;
