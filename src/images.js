@@ -27,19 +27,19 @@ const images = [
 	},
 	{
 		id: uuid(),
-		linkUrl: 'https://toskan.github.io/ancient-greece-themed-game/',
-		repoUrl: 'https://github.com/toskan/ancient-greece-themed-game',
+		linkUrl: 'https://getweatherapi.herokuapp.com/',
+		repoUrl: 'https://github.com/toskan/weatherApi',
 		projectImgs: [
 			{
 				url:
-					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/greco_screenshot_mobile_2.png',
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/weather_app_screenshot.png',
 				video:
-					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/greco_1_porrait.mp4',
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/weather_1_portrait.mp4',
 				orientation: 'portrait',
 			},
 			{
 				video:
-					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/greco_2_portrait.mp4',
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/weather_2_portrait.mp4',
 				orientation: 'portrait',
 			},
 		],
@@ -99,19 +99,19 @@ const images = [
 	},
 	{
 		id: uuid(),
-		linkUrl: 'https://getweatherapi.herokuapp.com/',
-		repoUrl: 'https://github.com/toskan/weatherApi',
+		linkUrl: 'https://toskan.github.io/ancient-greece-themed-game/',
+		repoUrl: 'https://github.com/toskan/ancient-greece-themed-game',
 		projectImgs: [
 			{
 				url:
-					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/weather_app_screenshot.png',
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/greco_screenshot_mobile_2.png',
 				video:
-					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/weather_1_portrait.mp4',
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/greco_1_porrait.mp4',
 				orientation: 'portrait',
 			},
 			{
 				video:
-					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/weather_2_portrait.mp4',
+					'https://img-tamar-dev.s3.us-east-2.amazonaws.com/greco_2_portrait.mp4',
 				orientation: 'portrait',
 			},
 		],
