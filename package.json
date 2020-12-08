@@ -1,6 +1,6 @@
 {
-	"homepage": "https://www.tamar.dev/tamar_dev",
-	"name": "tamar_dev",
+	"homepage": ".",
+	"name": "tamar.dev",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
