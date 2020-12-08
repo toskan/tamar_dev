@@ -34,6 +34,7 @@ const Slide = ({ content, orientation, mobile }) => {
 					height: 100%;
 					width: auto;
 				`}
+				playsInline
 				autoPlay
 				loop
 			>

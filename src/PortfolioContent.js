@@ -7,6 +7,7 @@ const PortfolioContent = styled.div`
 	width: ${(props) => props.width}px;
 	display: flex;
 	align-items: center;
+	overflow-x: hidden;
 `;
 
 export default PortfolioContent;
