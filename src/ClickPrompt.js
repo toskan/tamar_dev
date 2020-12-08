@@ -6,7 +6,9 @@ const ClickPrompt = () => {
 		<div className="click-prompt-div">
 			<h3 className="click-prompt-h3">
 				<BsArrow90DegDown className="prompt-arrow" />
-				&nbsp;click thumbnail for more
+				<span className="prompt-span">
+					&nbsp;click thumbnail for more
+				</span>
 			</h3>
 		</div>
 	);

@@ -55,6 +55,10 @@
 .click-prompt-h3 {
 	font-size: 1.5em;
 }
+.prompt-span {
+	position: relative;
+	bottom: 15%;
+}
 .close-button {
 	position: fixed;
 	top: 13%;
