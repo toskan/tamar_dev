@@ -3,6 +3,9 @@
 	overflow: hidden;
 	top: 0;
 }
+.portfolio {
+	flex-direction: column;
+}
 .nail-div {
 	display: flex;
 	align-items: center;
