@@ -15,6 +15,7 @@
 .thumbnail-div {
 	display: flex;
 	width: 10%;
+	height: auto;
 	margin: 2.5em;
 	transition: transform ease-in 0.1s;
 }
@@ -80,6 +81,10 @@
 	}
 	.click-prompt-h3 {
 		font-size: 1.3em;
+	}
+	.thumbnail-div {
+		width: 15%;
+		height: auto;
 	}
 }
 
