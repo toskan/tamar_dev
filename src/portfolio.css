@@ -28,6 +28,7 @@
 .thumbnail-img {
 	height: auto;
 	width: 100%;
+	align-self: flex-start;
 }
 .thumbnail-div:hover {
 	transform: scale(1.04);
@@ -90,9 +91,6 @@
 	}
 	.thumbnail-div {
 		width: 20%;
-	}
-	.thumbnail-img {
-		align-self: flex-start;
 	}
 }
 
