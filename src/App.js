@@ -20,7 +20,6 @@ const App = () => {
 		height: window.innerHeight,
 		width: window.innerWidth,
 	});
-	console.log(dimensions);
 	useEffect(() => {
 		const debouncedHandleResize = debounce(function handleResize() {
 			setDimensions({
@@ -30,7 +29,7 @@ const App = () => {
 		}, 1000);
 
 		window.addEventListener('resize', debouncedHandleResize);
-
+		console.log(dimensions.width);
 		return (_) => {
 			window.removeEventListener('resize', debouncedHandleResize);
 		};
