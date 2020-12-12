@@ -9,6 +9,7 @@ const Contact = () => {
 		subject: '',
 		message: '',
 	});
+
 	const onInputChange = (e) => {
 		setInputValues({ ...inputValues, [e.target.name]: e.target.value });
 	};
@@ -39,7 +40,12 @@ const Contact = () => {
 		})
 			.then((res) => {
 				console.log(res.status);
-				setInputValues('');
+				setInputValues({
+					name: '',
+					email: '',
+					subject: '',
+					message: '',
+				});
 			})
 			.catch((err) => {
 				console.log(err.message ? err.message : 'Unknown error');
