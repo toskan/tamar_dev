@@ -61,7 +61,7 @@ const Contact = () => {
 		let xmlhttp = new XMLHttpRequest();
 		xmlhttp.open(
 			'POST',
-			'https://ygcvw9uq8j.execute-api.us-east-1.amazonaws.com/deploy'
+			'https://j6ehcj6s7j.execute-api.us-east-1.amazonaws.com/test/contact'
 		);
 		xmlhttp.setRequestHeader('Content-Type', 'application/json');
 		xmlhttp.send(JSON.stringify(inputValues));
