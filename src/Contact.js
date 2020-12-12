@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css';
-// import axios from 'axios';
+import axios from 'axios';
 
 const Contact = () => {
 	const [inputValues, setInputValues] = useState({
@@ -27,54 +27,23 @@ const Contact = () => {
 			return;
 		}
 
-		// axios({
-		// 	method: 'POST',
-		// 	url:
-		// 		'https://5wfnnwvgl5.execute-api.us-east-1.amazonaws.com/Testing',
-		// 	data: JSON.stringify(data),
-		// 	dataType: 'json',
-		// 	crossDomain: 'true',
-		// 	contentType: 'application/json; charset=utf-8',
-		// }).then((response) => {
-		// 	if (response.data.status === 'success') {
-		// 		alert('Message Sent.');
-		// 		setInputValues('');
-		// 	} else if (response.data.status === 'fail') {
-		// 		alert('Message failed to send.');
-		// 	}
-		// });
-
-		// axios({
-		// 	method: 'post',
-		// 	url:
-		// 		'https://ygcvw9uq8j.execute-api.us-east-1.amazonaws.com/deploy',
-		// 	data: data,
-		// })
-		// 	.then((res) => {
-		// 		if (res.status) this.setState({ success: true });
-		// 		setInputValues('');
-		// 	})
-		// 	.catch((err) => {
-		// 		console.log(err.message ? err.message : 'Unknown error');
-		// 	});
-
-		let xmlhttp = new XMLHttpRequest();
-		xmlhttp.open(
-			'POST',
-			'https://j6ehcj6s7j.execute-api.us-east-1.amazonaws.com/test/contact'
-		);
-		xmlhttp.setRequestHeader('Content-Type', 'application/json');
-		xmlhttp.send(JSON.stringify(inputValues));
-		xmlhttp.onreadystatechange = function () {
-			if (xmlhttp.readyState === 4) {
-				if (xmlhttp.status === 200) {
-					console.log('successful');
-					setInputValues('');
-				} else {
-					console.log('failed');
-				}
-			}
-		};
+		axios({
+			method: 'post',
+			url:
+				'https://j6ehcj6s7j.execute-api.us-east-1.amazonaws.com/test/contact',
+			data: JSON.stringify(inputValues),
+			headers: {
+				'Content-Type': 'application/json',
+				'Access-Control-Allow-Origin': '*',
+			},
+		})
+			.then((res) => {
+				if (res.status) this.setState({ success: true });
+				setInputValues('');
+			})
+			.catch((err) => {
+				console.log(err.message ? err.message : 'Unknown error');
+			});
 	};
 
 	return (
@@ -170,3 +139,21 @@ export default Contact;
 // 		alert('UnSuccessfull');
 // 	},
 // });
+
+//let xmlhttp = new XMLHttpRequest();
+// xmlhttp.open(
+// 	'POST',
+// 	'https://j6ehcj6s7j.execute-api.us-east-1.amazonaws.com/test/contact'
+// );
+// xmlhttp.setRequestHeader('Content-Type', 'application/json');
+// xmlhttp.send(JSON.stringify(inputValues));
+// xmlhttp.onreadystatechange = function () {
+// 	if (xmlhttp.readyState === 4) {
+// 		if (xmlhttp.status === 200) {
+// 			console.log('successful');
+// 			setInputValues('');
+// 		} else {
+// 			console.log('failed');
+// 		}
+// 	}
+// };
