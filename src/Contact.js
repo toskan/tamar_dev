@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css';
-import axios from 'axios';
+// import axios from 'axios';
 
 const Contact = () => {
 	const [inputValues, setInputValues] = useState({
@@ -27,29 +27,54 @@ const Contact = () => {
 			return;
 		}
 
-		let data = {
-			name: inputValues.name,
-			phone: inputValues.phone,
-			email: inputValues.email,
-			desc: inputValues.desc,
-		};
+		// axios({
+		// 	method: 'POST',
+		// 	url:
+		// 		'https://5wfnnwvgl5.execute-api.us-east-1.amazonaws.com/Testing',
+		// 	data: JSON.stringify(data),
+		// 	dataType: 'json',
+		// 	crossDomain: 'true',
+		// 	contentType: 'application/json; charset=utf-8',
+		// }).then((response) => {
+		// 	if (response.data.status === 'success') {
+		// 		alert('Message Sent.');
+		// 		setInputValues('');
+		// 	} else if (response.data.status === 'fail') {
+		// 		alert('Message failed to send.');
+		// 	}
+		// });
 
-		axios({
-			method: 'POST',
-			url:
-				'https://5wfnnwvgl5.execute-api.us-east-1.amazonaws.com/Testing',
-			data: JSON.stringify(data),
-			dataType: 'json',
-			crossDomain: 'true',
-			contentType: 'application/json; charset=utf-8',
-		}).then((response) => {
-			if (response.data.status === 'success') {
-				alert('Message Sent.');
-				setInputValues('');
-			} else if (response.data.status === 'fail') {
-				alert('Message failed to send.');
+		// axios({
+		// 	method: 'post',
+		// 	url:
+		// 		'https://ygcvw9uq8j.execute-api.us-east-1.amazonaws.com/deploy',
+		// 	data: data,
+		// })
+		// 	.then((res) => {
+		// 		if (res.status) this.setState({ success: true });
+		// 		setInputValues('');
+		// 	})
+		// 	.catch((err) => {
+		// 		console.log(err.message ? err.message : 'Unknown error');
+		// 	});
+
+		let xmlhttp = new XMLHttpRequest();
+		xmlhttp.open(
+			'POST',
+			'https://ygcvw9uq8j.execute-api.us-east-1.amazonaws.com/deploy'
+		);
+		xmlhttp.setRequestHeader('Content-Type', 'application/json');
+		xmlhttp.send(JSON.stringify(inputValues));
+		xmlhttp.onreadystatechange = function () {
+			if (xmlhttp.readyState === 4) {
+				if (xmlhttp.status === 200) {
+					console.log('successful');
+					setInputValues('');
+				} else {
+					console.log('failed');
+				}
 			}
-		});
+		};
 	};
 
 	return (
@@ -125,21 +150,23 @@ const Contact = () => {
 export default Contact;
 
 // (e) => setInputValues({ name: e.target.value });
-// let xmlhttp = new XMLHttpRequest();
-// xmlhttp.open(
-// 	'POST',
-// 	'https://a56lz2ndra.execute-api.us-east-1.amazonaws.com/'
-// );
-// xmlhttp.setRequestHeader('Content-Type', 'application/json');
-// xmlhttp.send(JSON.stringify(inputValues));
-// xmlhttp.onreadystatechange = function () {
-// 	if (xmlhttp.readyState === 4) {
-// 		let response = JSON.parse(xmlhttp.responseText);
-// 		if (xmlhttp.status === 200) {
-// 			console.log('successful');
-// 			setInputValues('');
-// 		} else {
-// 			console.log('failed');
-// 		}
-// 	}
-// };
+
+// $.ajax({
+// 	type: 'POST',
+// 	url: 'https://abc1234.execute-api.us-east-1.amazonaws.com/01/contact',
+// 	dataType: 'json',
+// 	crossDomain: 'true',
+// 	contentType: 'application/json; charset=utf-8',
+// 	data: JSON.stringify(data),
+
+// 	success: function () {
+// 		// clear form and show a success message
+// 		alert('Successfull');
+// 		document.getElementById('contact-form').reset();
+// 		location.reload();
+// 	},
+// 	error: function () {
+// 		// show an error message
+// 		alert('UnSuccessfull');
+// 	},
+// });
