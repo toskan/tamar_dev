@@ -38,7 +38,7 @@ const Contact = () => {
 			},
 		})
 			.then((res) => {
-				if (res.status) this.setState({ success: true });
+				console.log(res.status);
 				setInputValues('');
 			})
 			.catch((err) => {
