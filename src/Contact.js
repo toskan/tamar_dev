@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Contact.css';
+import Confetti from 'react-confetti';
 import axios from 'axios';
 
 const Contact = () => {
@@ -10,14 +11,34 @@ const Contact = () => {
 		message: '',
 	});
 
+	const [inputShow, setInputShow] = useState(true);
+
 	const onInputChange = (e) => {
 		setInputValues({ ...inputValues, [e.target.name]: e.target.value });
 	};
 
+	useEffect(() => {
+		if (!inputShow) {
+			setTimeout(() => {
+				setInputShow(true);
+				setInputValues({
+					name: '',
+					email: '',
+					subject: '',
+					message: '',
+				});
+			}, 10000);
+		}
+	}, [inputShow]);
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		if (inputValues.name === '' || inputValues.message === '') {
+		if (
+			inputValues.name === '' ||
+			inputValues.message === '' ||
+			inputValues.subject === ''
+		) {
 			alert('Fill in all required fields');
 			return;
 		}
@@ -37,12 +58,7 @@ const Contact = () => {
 		})
 			.then((res) => {
 				console.log(res.status);
-				setInputValues({
-					name: '',
-					email: '',
-					subject: '',
-					message: '',
-				});
+				setInputShow(false);
 			})
 			.catch((err) => {
 				console.log(err.message ? err.message : 'Unknown error');
@@ -50,118 +66,96 @@ const Contact = () => {
 	};
 
 	return (
-		<div className="content-contact">
-			<div className="contact-me">
-				<h3>get in touch</h3>
-			</div>
-			<div className="form-div">
-				<form
-					className="form-contact"
-					action="action_page.php"
-					onSubmit={handleSubmit}
-					method="POST"
-				>
-					<label htmlFor="name" className="visually-hidden">
-						Name:
-					</label>
-					<input
-						type="text"
-						id="name name-input"
-						name="name"
-						placeholder="name"
-						value={inputValues.name}
-						onChange={onInputChange}
+		<>
+			{inputShow && (
+				<div className="content-contact">
+					<div className="contact-me">
+						<h3>get in touch</h3>
+					</div>
+					<div className="form-div">
+						<form
+							className="form-contact"
+							action="action_page.php"
+							onSubmit={handleSubmit}
+							method="POST"
+						>
+							<label htmlFor="name" className="visually-hidden">
+								Name:
+							</label>
+							<input
+								type="text"
+								id="name name-input"
+								name="name"
+								placeholder="name"
+								value={inputValues.name}
+								onChange={onInputChange}
+							/>
+							<label
+								htmlFor="exampleInputEmail1"
+								className="visually-hidden"
+							>
+								Email:
+							</label>
+							<input
+								type="email"
+								id="email email-input"
+								name="email"
+								placeholder="email"
+								aria-describedby="emailHelp"
+								value={inputValues.email}
+								onChange={onInputChange}
+							/>
+							<label
+								htmlFor="subject"
+								className="visually-hidden"
+							>
+								Subject:
+							</label>
+							<input
+								type="text"
+								id="subject subject-input"
+								name="subject"
+								placeholder="subject"
+								value={inputValues.subject}
+								onChange={onInputChange}
+							/>
+							<label
+								htmlFor="message"
+								className="visually-hidden"
+							>
+								Write your Message:
+							</label>
+							<textarea
+								id="message description-input"
+								name="message"
+								placeholder="message"
+								rows="5"
+								value={inputValues.message}
+								onChange={onInputChange}
+							></textarea>
+							<label htmlFor="submit" className="visually-hidden">
+								Send your Message:
+							</label>
+							<input type="submit" value="send" id="submit" />
+						</form>
+					</div>
+				</div>
+			)}
+			{!inputShow && (
+				<div className="success-div">
+					<h2 className="success-message">
+						Thank you for your message!
+					</h2>
+					<p className="success-paragraph">
+						I will get back to you about {inputValues.subject} soon.
+					</p>
+					<Confetti
+						colors={['#1d1d1d', '#ffffff', ' #727983', '#297a4d']}
 					/>
-					<label
-						htmlFor="exampleInputEmail1"
-						className="visually-hidden"
-					>
-						Email:
-					</label>
-					<input
-						type="email"
-						id="email email-input"
-						name="email"
-						placeholder="email"
-						aria-describedby="emailHelp"
-						value={inputValues.email}
-						onChange={onInputChange}
-					/>
-					<label htmlFor="subject" className="visually-hidden">
-						Subject:
-					</label>
-					<input
-						type="text"
-						id="subject subject-input"
-						name="subject"
-						placeholder="subject"
-						value={inputValues.subject}
-						onChange={onInputChange}
-					/>
-					<label htmlFor="message" className="visually-hidden">
-						Write your Message:
-					</label>
-					<textarea
-						id="message description-input"
-						name="message"
-						placeholder="message"
-						rows="5"
-						value={inputValues.message}
-						onChange={onInputChange}
-					></textarea>
-					<label htmlFor="submit" className="visually-hidden">
-						Send your Message:
-					</label>
-					<input type="submit" value="send" id="submit" />
-				</form>
-			</div>
-		</div>
+				</div>
+			)}
+		</>
 	);
 };
 
 export default Contact;
-
-// headers: {
-// 				'Content-Type': 'application/json',
-// 				'Access-Control-Allow-Origin': '*',
-// 			},
-
-// (e) => setInputValues({ name: e.target.value });
-
-// $.ajax({
-// 	type: 'POST',
-// 	url: 'https://abc1234.execute-api.us-east-1.amazonaws.com/01/contact',
-// 	dataType: 'json',
-// 	crossDomain: 'true',
-// 	contentType: 'application/json; charset=utf-8',
-// 	data: JSON.stringify(data),
-
-// 	success: function () {
-// 		// clear form and show a success message
-// 		alert('Successfull');
-// 		document.getElementById('contact-form').reset();
-// 		location.reload();
-// 	},
-// 	error: function () {
-// 		// show an error message
-// 		alert('UnSuccessfull');
-// 	},
-// });
-
-//let xmlhttp = new XMLHttpRequest();
-// xmlhttp.open(
-// 	'POST',
-// 	'https://j6ehcj6s7j.execute-api.us-east-1.amazonaws.com/test/contact'
-// );
-// xmlhttp.setRequestHeader('Content-Type', 'application/json');
-// xmlhttp.send(JSON.stringify(inputValues));
-// xmlhttp.onreadystatechange = function () {
-// 	if (xmlhttp.readyState === 4) {
-// 		if (xmlhttp.status === 200) {
-// 			console.log('successful');
-// 			setInputValues('');
-// 		} else {
-// 			console.log('failed');
-// 		}
-// 	}
-// };
