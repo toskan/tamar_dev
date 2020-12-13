@@ -31,13 +31,9 @@ const Contact = () => {
 		axios({
 			method: 'post',
 			url:
-				'https://j6ehcj6s7j.execute-api.us-east-1.amazonaws.com/test',
-            data: JSON.stringify(inputValues),
-            crossDomain: true
-			headers: {
-				'Content-Type': 'application/json',
-				'Access-Control-Allow-Origin': '*',
-			},
+				'https://j6ehcj6s7j.execute-api.us-east-1.amazonaws.com/test/contact',
+			data: JSON.stringify(inputValues),
+			crossDomain: true,
 		})
 			.then((res) => {
 				console.log(res.status);
@@ -124,6 +120,11 @@ const Contact = () => {
 };
 
 export default Contact;
+
+// headers: {
+// 				'Content-Type': 'application/json',
+// 				'Access-Control-Allow-Origin': '*',
+// 			},
 
 // (e) => setInputValues({ name: e.target.value });
 
