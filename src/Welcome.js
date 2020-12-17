@@ -12,7 +12,7 @@ function Welcome() {
 					I'm Tamar, a NYC based front end developer.
 					<br />
 					<br />
-					Please, check out my{' '}
+					Check out my{' '}
 					<Link to="/portfolio" className="portfolio-text-link">
 						portfolio
 					</Link>
