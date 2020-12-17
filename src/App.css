@@ -7,7 +7,7 @@ body {
 	font-family: 'Noto Sans JP', sans-serif;
 	margin: auto 0;
 	background-color: whitesmoke;
-	background: url('https://img-tamar-dev.s3.us-east-2.amazonaws.com/less_opaque.png')
+	background: url('https://img-tamar-dev.s3.us-east-2.amazonaws.com/opaque_image.png')
 		no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
