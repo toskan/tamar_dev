@@ -76,6 +76,9 @@
 	.contact-me > h3 {
 		font-size: 2.2em;
 	}
+	.form-contact {
+		margin-bottom: 3em;
+	}
 }
 
 @media screen and (max-width: 823px) and (orientation: landscape) {

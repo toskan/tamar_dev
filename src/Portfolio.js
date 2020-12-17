@@ -29,7 +29,7 @@ const Portfolio = (props) => {
 		} else {
 			portfolioDiv.style.display = 'flex';
 		}
-		if (!nailSelect && !mobile.eitherOr) {
+		if (!nailSelect && !mobile.eitherOr && navDiv !== undefined) {
 			navDiv.style.display = 'none';
 		}
 		if (nailSelect && !mobile.eitherOr && navDiv !== undefined) {
