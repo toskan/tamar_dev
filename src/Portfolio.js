@@ -32,7 +32,8 @@ const Portfolio = (props) => {
 		if (!nailSelect && !mobile.eitherOr) {
 			navDiv.style.display = 'none';
 		}
-		if (nailSelect && !mobile.eitherOr) {
+		if (nailSelect && !mobile.eitherOr && navDiv !== undefined) {
+			console.log(navDiv);
 			navDiv.style.display = 'flex';
 		}
 	}, [nailSelect]);
