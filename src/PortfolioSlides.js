@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PortfolioContent from './PortfolioContent';
 import Slide from './Slide';
 import ArrowComponent from './ArrowComponent';
@@ -28,6 +28,15 @@ const PortfolioSlides = ({
 		setActiveIndex(activeIndex - 1);
 		setTranslate((activeIndex - 1) * getWidth());
 	};
+
+	useEffect(() => {
+		if (!nailSelect) {
+			window.addEventListener('orientationchange', function () {
+				window.location.reload();
+			});
+		}
+	}, [nailSelect]);
+
 	return (
 		<div>
 			{!nailSelect && (
