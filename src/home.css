@@ -12,7 +12,7 @@
 	/* height: 15%; */
 	height: 66%;
 	/* margin: 0 1em 0 1em; */
-	margin: 0 10em;
+	margin: 0 15em;
 	text-align: justify;
 }
 .p-intro p {
@@ -46,7 +46,8 @@
 }
 .welcome-h2 {
 	font-size: 5.5em;
-	color: #1d1d1d;
+	/* color: #1d1d1d; */
+	color: #297a4d;
 	padding-bottom: 0.3em;
 }
 .skills-div {

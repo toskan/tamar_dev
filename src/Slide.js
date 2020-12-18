@@ -6,19 +6,19 @@ const Slide = ({ content, orientation, mobile }) => {
 	const [height, setHeight] = React.useState(0);
 	React.useEffect(() => {
 		if (mobile.portrait && orientation === 'portrait') {
-			setHeight('45%');
+			setHeight('100%');
 		}
 		if (mobile.portrait && orientation === 'landscape') {
-			setHeight('25%');
+			setHeight('30%');
 		}
 		if (mobile.landscape && orientation === 'portrait') {
-			setHeight('55%');
+			setHeight('100%');
 		}
 		if (mobile.landscape && orientation === 'landscape') {
-			setHeight('60%');
+			setHeight('90%');
 		}
 		if (!mobile.eitherOr && orientation === 'portrait') {
-			setHeight('80%');
+			setHeight('98%');
 		}
 		if (!mobile.eitherOr && orientation === 'landscape') {
 			setHeight('55%');
@@ -32,7 +32,6 @@ const Slide = ({ content, orientation, mobile }) => {
 				width: 100%;
 				display: flex;
 				justify-content: center;
-				margin-top: 2em;
 			`}
 		>
 			<video

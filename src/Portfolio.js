@@ -23,17 +23,16 @@ const Portfolio = (props) => {
 
 	useEffect(() => {
 		const portfolioDiv = document.getElementsByClassName('portfolio')[0];
-		const navDiv = document.getElementsByClassName('side-nav-div')[0];
+		const navDiv = document.getElementById('menu-header-div');
 		if (!nailSelect) {
 			portfolioDiv.style.display = 'none';
 		} else {
 			portfolioDiv.style.display = 'flex';
 		}
-		if (!nailSelect && !mobile.eitherOr && navDiv !== undefined) {
+		if (!nailSelect) {
 			navDiv.style.display = 'none';
 		}
-		if (nailSelect && !mobile.eitherOr && navDiv !== undefined) {
-			console.log(navDiv);
+		if (nailSelect) {
 			navDiv.style.display = 'flex';
 		}
 	}, [nailSelect]);

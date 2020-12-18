@@ -38,13 +38,15 @@
 }
 .project-link-div {
 	position: fixed;
-	top: 13.8%;
-	right: 11.5%;
+	top: 4.6%;
+	right: 10%;
 }
 .project-link-img {
-	height: 30px;
+	height: 50px;
 	width: auto;
 	transition: transform ease-in 0.1s;
+	background-color: white;
+	border-radius: 50%;
 }
 .click-prompt-div {
 	display: flex;
@@ -61,10 +63,10 @@
 }
 .close-button {
 	position: fixed;
-	top: 13%;
-	right: 5%;
-	height: 50px;
-	width: 50px;
+	top: 4%;
+	right: 3%;
+	height: 60px;
+	width: 60px;
 	color: #1d1d1d;
 	background-color: white;
 	border-radius: 50%;
@@ -82,16 +84,31 @@
 	.thumbnail-div {
 		width: 18%;
 	}
+	.project-link-img {
+		background-color: white;
+		border-radius: 50%;
+		padding: 0.05em;
+	}
+	.project-link-div {
+		top: 6.5%;
+		right: 15%;
+		width: 55px;
+		height: auto;
+	}
+	.close-button {
+		top: 6%;
+		right: 5.5%;
+	}
 }
 
 @media screen and (max-width: 1024px) and (orientation: landscape) {
 	.project-link-div {
-		top: 12%;
+		top: 7.5%;
 		right: 12%;
 	}
 	.close-button {
-		top: 11%;
-		right: 5%;
+		top: 7%;
+		right: 4.5%;
 	}
 }
 
@@ -101,14 +118,14 @@
 
 @media screen and (max-width: 414px) and (orientation: portrait) {
 	.project-link-div {
-		top: 20.5%;
-		right: 20%;
+		top: 5%;
+		right: 24%;
 	}
 	.close-button {
-		top: 20%;
-		right: 5%;
-		height: 40px;
-		width: 40px;
+		top: 5%;
+		right: 6%;
+		height: 50px;
+		width: 50px;
 	}
 	.click-prompt-h3 {
 		font-size: 1.3em;
@@ -116,15 +133,22 @@
 	.thumbnail-div {
 		width: 20%;
 	}
+	.project-link-img {
+		background-color: white;
+		border-radius: 50%;
+		padding: 0.05em;
+	}
 }
 
 @media screen and (max-width: 823px) and (orientation: landscape) {
 	.project-link-div {
-		top: 26%;
-		right: 15%;
+		top: 5%;
+		right: 16%;
 	}
 	.close-button {
-		top: 25%;
-		right: 5%;
+		top: 5%;
+		right: 6%;
+		height: 50px;
+		width: 50px;
 	}
 }
