@@ -12,7 +12,7 @@
 	/* height: 15%; */
 	height: 66%;
 	/* margin: 0 1em 0 1em; */
-	margin: 0 15em;
+	margin: 0 10em;
 	text-align: justify;
 }
 .p-intro p {
@@ -71,6 +71,13 @@
 	margin-right: 0;
 }
 
+/* for larger screens */
+@media only screen and (min-width: 1200px) {
+	.p-intro {
+		margin: 0 15em;
+	}
+}
+
 /* tablets */
 
 @media screen and (max-width: 768px) and (orientation: portrait) {
@@ -86,6 +93,9 @@
 }
 
 @media screen and (max-width: 1024px) and (orientation: landscape) {
+	.p-intro {
+		margin: 0 10em;
+	}
 }
 
 /* mobile */

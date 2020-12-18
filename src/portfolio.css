@@ -77,6 +77,13 @@
 	transform: scale(1.1);
 }
 
+/* for larger screens */
+@media only screen and (min-width: 1200px) {
+	.close-button {
+		right: 4%;
+	}
+}
+
 /* tablets */
 /* @media screen and (max-width: 768px) and (orientation: portrait) */
 /* @media screen and (max-width: 1024px) and (orientation: landscape)  */
