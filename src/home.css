@@ -126,7 +126,7 @@
 		/* flex-grow: 1; */
 	}
 	.skills-list > li {
-		margin-right: 1em;
+		margin-right: 0.7em;
 		width: auto;
 	}
 	.skills-list > li:last-child {
