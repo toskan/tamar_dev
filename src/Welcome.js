@@ -9,19 +9,21 @@ function Welcome() {
 			</div>
 			<div className="p-intro">
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna
-					aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-					ullamco laboris nisi ut aliquip ex ea commodo consequat.
-					Duis aute irure dolor in reprehenderit in voluptate velit
-					esse cillum dolore eu fugiat nulla pariatur.
+					I'm Tamar, a Front End Web Developer, based in NY. I built
+					this site in React. My other projects are written in
+					Javascript, using jQuery.
+					<br />
+					<br />
+					I love to problem solve. The satisfaction of making
+					something work and creating something new in the process is
+					the best reward.
 					<br />
 					<br />
 					Check out my{' '}
 					<Link to="/portfolio" className="portfolio-text-link">
 						portfolio
-					</Link>
-					.
+					</Link>{' '}
+					and get in touch if you like what you see.
 				</p>
 			</div>
 			<div className="skills-div">

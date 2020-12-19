@@ -17,16 +17,10 @@
 	color: #1d1d1d;
 	outline: none;
 	cursor: pointer;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-	-webkit-transition-timing-function: ease-in-out;
-	transition-timing-function: ease-in-out;
 	display: inline-block;
 }
 .portfolio-text-link:hover {
 	color: #5d5d5d;
-	transform: scale(1.05, 1.05);
-	margin: 0 0.2em 0 0.2em;
 }
 .global-class-name {
 	position: relative;
