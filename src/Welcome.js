@@ -14,7 +14,7 @@ function Welcome() {
 					Javascript, using jQuery.
 					<br />
 					<br />
-					I love to problem solve. The satisfaction of making
+					I love to solve problems. The satisfaction of making
 					something work and creating something new in the process is
 					the best reward.
 					<br />
