@@ -11,7 +11,7 @@ function Welcome() {
 				<p>
 					I'm Tamar, a Front End Web Developer, based in NY. I built
 					this site in React. My other projects are written in
-					Javascript, using jQuery.
+					Javascript as well, using jQuery.
 					<br />
 					<br />
 					I love to solve problems. The satisfaction of making
