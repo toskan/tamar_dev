@@ -7,11 +7,16 @@
 .p-intro {
 	color: #1d1d1d;
 	font-size: 1.5em;
+	font-family: 'Karla';
 	display: flex;
 	justify-content: center;
 	height: 66%;
 	margin: 0 10em;
 	text-align: justify;
+	padding-top: 0.3em;
+}
+.bio-paragraphs {
+	font-weight: 400;
 }
 .portfolio-text-link {
 	color: #1d1d1d;
@@ -31,11 +36,14 @@
 	display: flex;
 	justify-content: center;
 	height: 24%;
+	align-items: flex-start;
 }
 .welcome-h2 {
 	font-size: 5.5em;
 	color: #297a4d;
 	padding-bottom: 0.3em;
+	letter-spacing: 0.01em;
+	border-bottom: 0.04em solid #297a4d;
 }
 .skills-div {
 	display: flex;
@@ -58,9 +66,9 @@
 }
 
 /* for larger screens */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1250px) {
 	.p-intro {
-		margin: 0 15em;
+		margin: 0 19em;
 	}
 }
 
@@ -98,6 +106,7 @@
 		margin: 0 0.2em 0 0.2em;
 		font-size: 1.4em;
 		margin: 0.5em 0.3em;
+		padding: 1em;
 	}
 	.skills-div {
 		display: inline;
@@ -121,7 +130,7 @@
 @media screen and (max-width: 823px) and (orientation: landscape) {
 	.h2-div {
 		align-items: center;
-		padding: 1em 0;
+		margin: 1em 0;
 		font-size: 0.7em;
 	}
 	.p-intro {

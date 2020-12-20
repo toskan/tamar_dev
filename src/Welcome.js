@@ -8,7 +8,7 @@ function Welcome() {
 				<h2 className="welcome-h2">hello.</h2>
 			</div>
 			<div className="p-intro">
-				<p>
+				<p className="bio-paragraphs">
 					I'm Tamar, a Front End Web Developer, based in NY. I built
 					this site in React. My other projects are written in
 					Javascript as well, using jQuery.
