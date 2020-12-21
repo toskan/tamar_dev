@@ -41,9 +41,9 @@
 .welcome-h2 {
 	font-size: 5.5em;
 	color: #297a4d;
-	padding-bottom: 0.3em;
+	/* padding-bottom: 0.3em; */
 	letter-spacing: 0.01em;
-	border-bottom: 0.04em solid #297a4d;
+	/* border-bottom: 0.04em solid #297a4d; */
 }
 .skills-div {
 	display: flex;
