@@ -8,7 +8,7 @@
 	outline: none;
 }
 .burger-menu {
-	margin-left: 0;
+	margin-left: 0.15em;
 }
 .burger-menu-list {
 	margin-left: 0;
@@ -16,10 +16,10 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
 	position: relative;
-	width: 36px;
+	width: 40px;
 	height: 30px;
-	left: 32px;
-	top: 43px;
+	left: 66px;
+	top: 50px;
 }
 .burger-overlay {
 	background-color: black;
@@ -27,12 +27,19 @@
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
 	background: #1d1d1d;
+	height: 13% !important;
 }
+.bm-burger-bars:nth-child(2) {
+	top: 35% !important;
+}
+.bm-burger-bars:last-child {
+	top: 70% !important;
+}
+
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
 	background: #297a4d;
 }
-
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
 	height: 280px;
@@ -52,15 +59,20 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	position: fixed;
 	height: 100%;
 	top: 0;
+	width: 250px;
 }
 
 /* General sidebar styles */
 .bm-menu {
-	padding: 2.5em 1.5em 0;
+	padding: 4em 1.5em 0;
 	/*font-size: 1.15em;*/
 	background: #e8e8e8;
 }
-
+#page-wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 /* Wrapper for item list
 .bm-item-list {
 	color: #b8b7ad;
@@ -88,6 +100,19 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .bm-item:hover {
 	/* color: #ffffff; */
+}
+
+.hello-container {
+	text-align: center;
+	position: absolute;
+	top: -70px;
+	left: 100px;
+}
+
+div.hello-circ-text {
+	display: inline-block;
+	font-size: x-large;
+	color: #297a4d;
 }
 
 /* tablets */

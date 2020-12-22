@@ -1,17 +1,7 @@
 import React from 'react';
 import Burger from './Burger';
-import SideNav from './SideNav';
 
 const MenuType = ({ menuState, setMenuState }) => {
-	if (
-		(window.matchMedia('(max-width: 414px)').matches &&
-			window.matchMedia('(orientation: portrait)').matches) ||
-		(window.matchMedia('(max-width: 823px)').matches &&
-			window.matchMedia('(orientation: landscape)').matches)
-	) {
-		return <Burger setMenuState={setMenuState} menuState={menuState} />;
-	} else {
-		return <SideNav />;
-	}
+	return <Burger setMenuState={setMenuState} menuState={menuState} />;
 };
 export default MenuType;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MenuType from './MenuType';
 import './Sidebar.css';
+import HelloCircle from './HelloCircle';
 
 const Menu = () => {
 	const [menuState, setMenuState] = useState(false);
@@ -48,6 +49,7 @@ const Menu = () => {
 		<div id="menu-header-div">
 			<MenuType menuState={menuState} setMenuState={setMenuState} />
 			<div className="main-header-div">
+				<HelloCircle />
 				<div className="main-header-div-top">
 					<div className="title-div">
 						<h1 className="title">tamar</h1>

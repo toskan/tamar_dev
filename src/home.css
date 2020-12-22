@@ -3,17 +3,18 @@
 	flex-direction: column;
 	height: 100%;
 	width: 100%;
+	padding: 4em 17em;
 }
 .p-intro {
 	color: #1d1d1d;
 	font-size: 1.5em;
-	font-family: 'Karla';
 	display: flex;
 	justify-content: center;
-	height: 66%;
-	margin: 0 10em;
 	text-align: justify;
 	padding-top: 0.3em;
+}
+.paragraph-div {
+	font-family: 'Karla';
 }
 .bio-paragraphs {
 	font-weight: 400;
@@ -35,27 +36,28 @@
 .h2-div {
 	display: flex;
 	justify-content: center;
-	height: 24%;
 	align-items: flex-start;
 }
 .welcome-h2 {
 	font-size: 5.5em;
 	color: #297a4d;
-	/* padding-bottom: 0.3em; */
 	letter-spacing: 0.01em;
-	/* border-bottom: 0.04em solid #297a4d; */
 }
 .skills-div {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 15%;
+	flex-direction: column;
+	padding: 1em 0;
 }
 .skills-list {
-	color: #297a4d;
-	font-size: 1.5em;
+	font-size: 0.9em;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	margin-left: 0.3em;
+	font-family: 'Karla';
+}
+.skills-h4 {
+	font-size: 1em;
+	padding: 1em 0;
 }
 .skills-list > li {
 	display: inline-block;
@@ -67,8 +69,8 @@
 
 /* for larger screens */
 @media only screen and (min-width: 1250px) {
-	.p-intro {
-		margin: 0 19em;
+	.welcome-div {
+		padding: 0 24em;
 	}
 }
 
