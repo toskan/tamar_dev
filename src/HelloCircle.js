@@ -5,33 +5,58 @@ const HelloCircle = () => {
 	const txt = ` ${parev} ${parev} ${parev} ${parev} `.split('');
 	const deg = 360 / txt.length;
 	const [startOrigin, setStartOrigin] = useState(0);
+	const [degArr, setDegArr] = useState([]);
+	const [elementsPop, setElementsPop] = useState(false);
 
 	useEffect(() => {
 		const letterTimer = setTimeout(() => {
-			document
-				.querySelectorAll('.hello-circ-text')
-				.forEach((e) => (e.innerHTML = ''));
 			setStartOrigin(startOrigin + deg);
-		}, 2500);
+		}, 3950);
 
+		if (elementsPop) {
+			for (let i = 0; i < degArr.length; i++) {
+				document.getElementById(`hello-p-${i}`).animate(
+					[
+						{ transform: `rotate(${startOrigin + deg * i}deg)` },
+						{
+							transform: `rotate(${
+								startOrigin + deg * i + deg
+							}deg)`,
+						},
+					],
+					{
+						duration: 4000,
+						iterations: 1,
+					}
+				);
+			}
+		}
+
+		return () => {
+			clearTimeout(letterTimer);
+		};
+	}, [deg, degArr.length, elementsPop, startOrigin]);
+
+	useEffect(() => {
 		const circularText = (txt, radius, classIndex) => {
 			classIndex = document.getElementsByClassName('hello-circ-text')[
 				classIndex
 			];
 			let value = startOrigin;
 			let origin = value;
-			txt.forEach((ea) => {
-				ea = `<p className='hello-p' style='height:${radius}px;position:absolute;transform:rotate(${origin}deg);transform-origin:0 100%'>${ea}</p>`;
+			txt.forEach((ea, index) => {
+				ea = `<p id='hello-p-${index}' style='height:${radius}px;position:absolute;transform-origin:0 100%'>${ea}</p>`;
 				classIndex.innerHTML += ea;
+				setDegArr((degArray) => [...degArray, origin]);
 				origin += deg;
 			});
+			setElementsPop(true);
 		};
-		circularText(txt, 200, 0);
 
-		return () => {
-			clearTimeout(letterTimer);
-		};
-	}, [deg, startOrigin, txt]);
+		if (!elementsPop) {
+			circularText(txt, 200, 0);
+		}
+	}, [elementsPop, startOrigin, deg, txt]);
 
 	return (
 		<div className="hello-container">
@@ -41,3 +66,5 @@ const HelloCircle = () => {
 };
 
 export default HelloCircle;
+
+//transform:rotate(${origin}deg);
