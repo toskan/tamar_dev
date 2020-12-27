@@ -3,7 +3,7 @@
 	flex-direction: column;
 	height: 100%;
 	width: 100%;
-	padding: 4em 17em;
+	padding: 1.5em 15em;
 }
 .bio-div {
 	overflow: hidden;
@@ -43,23 +43,6 @@
 	top: 0.17em;
 	left: 0.1em;
 }
-/* .h2-div {
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-}
-.welcome-h2 {
-	font-size: 5.5em;
-	color: #297a4d;
-	letter-spacing: 0.01em;
-} */
-/* .first-line-div {
-	display: flex;
-	font-family: helvetica;
-}
-.first-line {
-	font-size: 1.7em;
-} */
 .paragraph-bio:nth-child(2) {
 	text-indent: 4em;
 }
@@ -88,10 +71,6 @@
 	font-size: 0.9em;
 	font-family: 'Karla';
 }
-/* .skills-h4 {
-	font-size: 1em;
-	padding: 1em 0;
-} */
 .skills-list > li {
 	padding: 0.1em;
 }
@@ -107,15 +86,6 @@
 	position: relative;
 	bottom: 3px;
 }
-/* .h4-div {
-	position: relative;
-	width: 20px;
-	transform: rotate(270deg);
-	bottom: 80px;
-	padding: 1em 0;
-	font-size: 1.5em;
-	color: green;
-} */
 
 /* for larger screens */
 @media only screen and (min-width: 1250px) {
@@ -127,18 +97,22 @@
 /* tablets */
 
 @media screen and (max-width: 768px) and (orientation: portrait) {
-	.skills-list > li {
-		width: 25%;
+	.welcome-div {
+		padding: 0;
+		margin-top: 0.5em;
 	}
-	.h2-div {
-		align-items: center;
+	.hell {
+		font-size: 2em;
 	}
 	.p-intro {
-		margin: 0 7em;
+		margin: 1em 3.5em;
 	}
 }
 
 @media screen and (max-width: 1024px) and (orientation: landscape) {
+	.welcome-div {
+		padding: 0;
+	}
 	.p-intro {
 		margin: 0 10em;
 	}
@@ -147,52 +121,37 @@
 /* mobile */
 
 @media screen and (max-width: 414px) and (orientation: portrait) {
-	.h2-div {
-		align-items: flex-start;
-		padding-top: 0.5em;
-	}
-	.welcome-h2 {
-		font-size: 4em;
+	.welcome-div {
+		padding: 0;
+		margin-top: 2em;
 	}
 	.p-intro {
-		margin: 0 0.2em 0 0.2em;
 		font-size: 1.4em;
 		margin: 0.5em 0.3em;
 		padding: 1em;
+		text-align: left;
 	}
 	.skills-div {
 		display: inline;
 		margin-top: 2.8em;
 	}
 	.skills-list {
-		font-size: 1.2em;
-	}
-	.skills-list > li {
-		margin-right: 0.7em;
-		width: auto;
-	}
-	.skills-list > li:last-child {
-		margin-right: 0.5em;
-	}
-	.skills-list > li:first-child {
-		margin-left: 0.5em;
+		font-size: 1em;
 	}
 }
 
 @media screen and (max-width: 823px) and (orientation: landscape) {
-	.h2-div {
-		align-items: center;
-		margin: 1em 0;
-		font-size: 0.7em;
+	.welcome-div {
+		padding: 0;
 	}
 	.p-intro {
 		margin: 0 5em;
 		font-size: 1.2em;
 	}
 	.skills-div {
-		margin: 3em 0;
+		margin-bottom: 3em;
 	}
 	.skills-div > ul {
-		font-size: 1.2em;
+		font-size: 1.1em;
 	}
 }

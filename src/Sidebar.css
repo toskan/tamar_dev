@@ -131,3 +131,10 @@ div.hello-circ-text {
 		font-size: 1.5em;
 	}
 }
+
+@media screen and (max-width: 414px) and (orientation: portrait) {
+	.bm-burger-button {
+		left: 35px;
+		top: 47px;
+	}
+}

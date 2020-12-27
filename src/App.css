@@ -48,16 +48,38 @@ body,
 	margin-right: 1.5em;
 	display: flex;
 }
+.outer-circle {
+	position: relative;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #ffffff;
+	margin: 0.4em;
+}
+
 .circle {
-	margin-right: 0.5em;
-	margin-left: 0.5em;
-	width: 1.8em;
-	height: 1.8em;
-	border: 0.2em solid #297a4d;
-	border-right: 0.2em solid #10301e;
-	border-radius: 1.8em;
-	margin-top: 0.3em;
-	animation: circle-turn 9000ms linear infinite;
+	background-image: linear-gradient(
+		90deg,
+		rgba(3, 160, 73, 1) 0%,
+		rgba(41, 122, 77, 1) 33%,
+		rgba(69, 192, 124, 1) 66%,
+		rgba(21, 63, 40, 1) 100%
+	);
+	/* background-image: linear-gradient(
+		90deg,
+		rgba(3, 160, 73, 1) 0%,
+		rgba(41, 122, 77, 1) 50%,
+		rgba(69, 192, 124, 1) 100%
+	); */
+	content: '';
+	position: absolute;
+	top: -3px;
+	bottom: -3px;
+	right: -3px;
+	left: -3px;
+	z-index: -1;
+	border-radius: inherit;
+	animation: circle-turn 8000ms linear infinite;
 }
 @-webkit-keyframes circle-turn {
 	0% {
@@ -156,6 +178,7 @@ div.hello-circ-text {
 	position: absolute;
 	transform-origin: 0 100%;
 }
+
 /* tablets */
 /* @media screen and (max-width: 768px) and (orientation: portrait) */
 /* @media screen and (max-width: 1024px) and (orientation: landscape)  */
@@ -163,6 +186,28 @@ div.hello-circ-text {
 @media screen and (max-width: 1024px) and (orientation: landscape) {
 	.header-div {
 		height: 31vh;
+	}
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+	.title-div {
+		padding-right: 1.5em;
+		margin-right: 0;
+	}
+	.title {
+		font-size: 1.8em;
+	}
+	.outer-circle {
+		width: 20px;
+		height: 20px;
+		bottom: 0.1em;
+	}
+	.hello-circ-text p.hello-p {
+		height: 160px;
+	}
+	.hello-container {
+		top: -60px;
+		left: 60px;
 	}
 }
 
@@ -175,7 +220,7 @@ div.hello-circ-text {
 		padding: 1em;
 	}
 	.menu {
-		font-size: 2.2em;
+		font-size: 2.1em;
 	}
 	#shrunken-bar-menu {
 		font-size: 1.5em;
@@ -184,36 +229,26 @@ div.hello-circ-text {
 		padding: 0.6em 0.6em;
 	}
 	.menu.burger-menu {
-		margin-left: 0.3em;
+		margin-left: 0.35em;
 	}
-	.circle-menu-full-burger {
-		margin-right: 0.3em;
-		margin-left: 0.3em;
-		width: 1.1em;
-		height: 1.1em;
-		border: 0.2em solid #297a4d;
-		border-radius: 1.1em;
-		margin-top: 0.7em;
+	.circle-burger {
+		margin-top: 0.05em;
+	}
+	.outer-circle {
+		width: 18px;
+		height: 18px;
+		top: 0.15em;
 	}
 	.title-div {
 		padding: 2.5em 0 0.3em 2.5em;
-		margin-right: 0.5em;
+		margin-right: 0.7em;
 	}
 	.title-menu-full-burger {
 		font-size: 2em;
 	}
-	.circle-burger {
-		margin-right: 0.2em;
-		margin-left: 0.2em;
-		width: 1em;
-		height: 1em;
-		border: 0.18em solid #297a4d;
-		border-radius: 1em;
-		margin-top: 0.4em;
-	}
 	.title-div-burger {
 		padding: 2.8em 0 0 2.5em;
-		margin-right: 0;
+		margin-right: 0.3em;
 	}
 	.title-burger {
 		font-size: 1.5em;
@@ -221,11 +256,18 @@ div.hello-circ-text {
 	.welcome-div {
 		padding: 1em;
 	}
-}
-.hello-p {
-	height: 200px;
-	position: absolute;
-	transform-origin: 0 100%;
+	.hello-container {
+		top: -25px;
+		left: 30px;
+	}
+	.hello-circ-text p.hello-p {
+		height: 130px;
+	}
+	div.hello-circ-text {
+		font-size: larger;
+	}
+	.circle-menu-full-burger {
+	}
 }
 
 @media screen and (max-width: 823px) and (orientation: landscape) {
@@ -243,19 +285,25 @@ div.hello-circ-text {
 		font-size: 2em;
 	}
 	.circle-menu-full-burger {
-		margin-right: 0.3em;
-		margin-left: 0.3em;
-		width: 1.1em;
-		height: 1.1em;
-		border: 0.2em solid #297a4d;
-		border-radius: 1.1em;
-		margin-top: 0.7em;
 	}
 	.title-div {
 		margin-right: 0;
 		padding: 2em 1em;
 	}
 	.header-div {
-		height: 25vh;
+		height: 36vh;
+	}
+	.outer-circle {
+		bottom: 3px;
+	}
+	.hello-p {
+		height: 150px;
+	}
+	.hello-container {
+		top: -100px;
+		left: 80px;
+	}
+	.paragraph-bio:first-child {
+		text-align: center;
 	}
 }

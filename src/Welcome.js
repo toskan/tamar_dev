@@ -9,11 +9,6 @@ function Welcome() {
 				<div className="bio-div">
 					<div className="paragraph-div">
 						<div className="bio-paragraphs">
-							{/* <div className="first-line-div">
-								<h3 className="first-line">Hell</h3>
-								<div className="circle-2"></div>
-								<h2 className="first-line">, I'm Tamar</h2>
-							</div> */}
 							<p className="paragraph-bio">
 								<span className="hell">
 									HELL

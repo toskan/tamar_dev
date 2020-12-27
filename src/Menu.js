@@ -10,7 +10,7 @@ const Menu = () => {
 		const portfolioDiv = document.getElementsByClassName('portfolio');
 		const titleDiv = document.getElementsByClassName('title-div');
 		const title = document.getElementsByClassName('title');
-		const circle = document.getElementsByClassName('circle');
+		const circle = document.getElementsByClassName('outer-circle');
 		if (menuState) {
 			titleDiv[0].classList.toggle('title-div-burger', true);
 			circle[0].classList.toggle('circle-burger', true);
@@ -53,7 +53,9 @@ const Menu = () => {
 				<div className="main-header-div-top">
 					<div className="title-div">
 						<h1 className="title">tamar</h1>
-						<div className="circle"></div>
+						<div className="outer-circle">
+							<div className="circle"></div>
+						</div>
 						<h1 className="title">dev</h1>
 					</div>
 				</div>

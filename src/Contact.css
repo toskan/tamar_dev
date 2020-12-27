@@ -93,8 +93,8 @@
 /* @media screen and (max-width: 768px) and (orientation: portrait) */
 /* @media screen and (max-width: 1024px) and (orientation: landscape) */
 
-/* @media screen and (max-width: 768px) {
-	#menu-header-div {
-		display: block;
+@media screen and (max-width: 768px) {
+	.content-contact {
+		margin-top: 6em;
 	}
-} */
+}

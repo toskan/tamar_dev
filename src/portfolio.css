@@ -40,7 +40,7 @@
 .project-link-div {
 	position: fixed;
 	top: 4.6%;
-	right: 10%;
+	right: 10.5%;
 }
 .project-link-img {
 	height: 50px;
@@ -65,7 +65,7 @@
 .close-button {
 	position: fixed;
 	top: 4%;
-	right: 3%;
+	right: 2%;
 	height: 60px;
 	width: 60px;
 	color: #1d1d1d;
@@ -99,13 +99,19 @@
 	}
 	.project-link-div {
 		top: 6.5%;
-		right: 15%;
+		right: 19%;
 		width: 55px;
 		height: auto;
 	}
 	.close-button {
 		top: 6%;
 		right: 5.5%;
+	}
+	.portfolio {
+		margin-top: 0.5em;
+	}
+	.click-prompt-h3 {
+		font-size: 1em;
 	}
 }
 
@@ -145,6 +151,9 @@
 		background-color: white;
 		border-radius: 50%;
 		padding: 0.05em;
+	}
+	.portfolio {
+		padding: 5em 0;
 	}
 }
 
