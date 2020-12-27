@@ -1,4 +1,3 @@
-import { set } from 'nprogress';
 import React, { useState, useEffect } from 'react';
 
 const HelloCircle = () => {

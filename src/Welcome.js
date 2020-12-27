@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Skills from './Skills';
 
 function Welcome() {
 	return (
@@ -57,16 +58,9 @@ function Welcome() {
 							</p>
 						</div>
 					</div>
-					<div className="skills-div">
-						<h4 className="skills-h4">SKILLS</h4>
-						<ul className="skills-list">
-							<li>CSS</li>
-							<li>RWD</li>
-							<li>JS</li>
-							<li>jQuery</li>
-							<li>React</li>
-						</ul>
-					</div>
+					<br />
+					<br />
+					<Skills />
 				</div>
 			</div>
 		</div>
