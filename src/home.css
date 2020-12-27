@@ -5,6 +5,9 @@
 	width: 100%;
 	padding: 4em 17em;
 }
+.bio-div {
+	overflow: hidden;
+}
 .p-intro {
 	color: #1d1d1d;
 	font-size: 1.4em;
@@ -40,7 +43,7 @@
 	top: 0.17em;
 	left: 0.1em;
 }
-.h2-div {
+/* .h2-div {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
@@ -49,6 +52,33 @@
 	font-size: 5.5em;
 	color: #297a4d;
 	letter-spacing: 0.01em;
+} */
+/* .first-line-div {
+	display: flex;
+	font-family: helvetica;
+}
+.first-line {
+	font-size: 1.7em;
+} */
+.paragraph-bio:nth-child(2) {
+	text-indent: 4em;
+}
+.circle-2 {
+	margin-left: 0.1em;
+	width: 1em;
+	height: 1em;
+	border: 0.1em solid #297a4d;
+	border-radius: 1em;
+	display: inline-block;
+}
+.hell {
+	font-size: 3em;
+	font-weight: 300;
+	letter-spacing: 0.02em;
+}
+.circle-span {
+	position: relative;
+	top: 0.035em;
 }
 .skills-div {
 	display: flex;
@@ -57,7 +87,6 @@
 .skills-list {
 	font-size: 0.9em;
 	font-family: 'Karla';
-	padding: 0.15em;
 }
 /* .skills-h4 {
 	font-size: 1em;
@@ -72,7 +101,7 @@
 .icon-span {
 	color: #297a4d;
 	font-size: 0.9em;
-	padding: 1em;
+	padding: 1em 1em 0 0;
 }
 .skill-span {
 	position: relative;

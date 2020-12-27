@@ -9,6 +9,21 @@ function Welcome() {
 				<div className="bio-div">
 					<div className="paragraph-div">
 						<div className="bio-paragraphs">
+							{/* <div className="first-line-div">
+								<h3 className="first-line">Hell</h3>
+								<div className="circle-2"></div>
+								<h2 className="first-line">, I'm Tamar</h2>
+							</div> */}
+							<p className="paragraph-bio">
+								<span className="hell">
+									HELL
+									<span className="circle-span">
+										<span className="circle-2"></span>
+									</span>
+								</span>
+							</p>
+							<br />
+							<br />
 							<p className="paragraph-bio">
 								I'm Tamar, a Front End Web Developer, based in
 								NY. My programming journey started at General

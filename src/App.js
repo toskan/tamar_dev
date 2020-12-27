@@ -23,13 +23,15 @@ const App = () => {
 	useEffect(() => {
 		const debouncedHandleResize = debounce(function handleResize() {
 			setDimensions({
+				...dimensions.height,
 				height: window.innerHeight,
+				...dimensions.width,
 				width: window.innerWidth,
 			});
 		}, 1000);
 
 		window.addEventListener('resize', debouncedHandleResize);
-		console.log(dimensions.width);
+
 		return (_) => {
 			window.removeEventListener('resize', debouncedHandleResize);
 		};
