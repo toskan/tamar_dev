@@ -102,7 +102,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	/* color: #ffffff; */
 }
 
-.hello-container {
+/* .hello-container {
 	text-align: center;
 	position: absolute;
 	top: -70px;
@@ -113,7 +113,7 @@ div.hello-circ-text {
 	display: inline-block;
 	font-size: x-large;
 	color: #297a4d;
-}
+} */
 
 /* tablets */
 /* @media screen and (max-width: 768px) and (orientation: portrait) */
