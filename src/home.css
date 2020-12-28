@@ -66,6 +66,7 @@
 .skills-div {
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 3em;
 }
 .skills-list {
 	font-size: 0.9em;
@@ -148,10 +149,10 @@
 		margin: 0 5em;
 		font-size: 1.2em;
 	}
-	.skills-div {
-		margin-bottom: 3em;
-	}
 	.skills-div > ul {
 		font-size: 1.1em;
+	}
+	.paragraph-bio:first-child {
+		text-align: center;
 	}
 }

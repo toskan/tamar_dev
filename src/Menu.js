@@ -2,63 +2,47 @@ import React, { useState, useEffect } from 'react';
 import MenuType from './MenuType';
 import './Sidebar.css';
 import HelloCircle from './HelloCircle';
+import mobile from './mobile';
+import LogoHeaderReg from './LogoHeaderReg';
+import LogoHMenuOpen from './LogoHMenuOpen';
 
 const Menu = () => {
 	const [menuState, setMenuState] = useState(false);
+	const [logoType, setLogoType] = useState(null);
+
 	useEffect(() => {
 		const content = document.getElementsByClassName('content');
+		const contentContact = document.getElementsByClassName(
+			'content-contact'
+		);
 		const portfolioDiv = document.getElementsByClassName('portfolio');
-		const titleDiv = document.getElementsByClassName('title-div');
-		const title = document.getElementsByClassName('title');
-		const circle = document.getElementsByClassName('outer-circle');
-		if (menuState) {
-			titleDiv[0].classList.toggle('title-div-burger', true);
-			circle[0].classList.toggle('circle-burger', true);
-			for (let i = 0; i < title.length; i++) {
-				title[i].classList.toggle('title-burger', true);
-			}
+		const contentOpacity = document.getElementsByClassName(
+			'opacity-content'
+		);
+
+		if (menuState && mobile.portrait) {
+			setLogoType(<LogoHMenuOpen />);
 		} else {
-			titleDiv[0].classList.toggle('title-div-burger', false);
-			circle[0].classList.toggle('circle-burger', false);
-			for (let i = 0; i < title.length; i++) {
-				title[i].classList.toggle('title-burger', false);
-			}
-			titleDiv[0].classList.toggle('title-div-menu-full-burger', true);
-			circle[0].classList.toggle('circle-menu-full-burger', true);
-			for (let i = 0; i < title.length; i++) {
-				title[i].classList.toggle('title-menu-full-burger', true);
-			}
+			setLogoType(<LogoHeaderReg />);
 		}
 
-		if (content.length > 0) {
-			if (menuState) {
-				content[0].style.opacity = '0.3';
-			} else {
-				content[0].style.opacity = '1';
-			}
+		// const opacity = (content) => {
+		if (menuState) {
+			contentOpacity[0].style.opacity = '0.3';
+		} else {
+			contentOpacity[0].style.opacity = '1';
 		}
-		if (portfolioDiv.length > 0) {
-			if (menuState) {
-				portfolioDiv[0].style.opacity = '0.3';
-			} else {
-				portfolioDiv[0].style.opacity = '1';
-			}
-		}
+		// };
+		// opacity(content);
+		// opacity(contentContact);
+		// opacity(portfolioDiv);
 	}, [menuState]);
 	return (
 		<div id="menu-header-div">
 			<MenuType menuState={menuState} setMenuState={setMenuState} />
 			<div className="main-header-div">
 				<HelloCircle />
-				<div className="main-header-div-top">
-					<div className="title-div">
-						<h1 className="title">tamar</h1>
-						<div className="outer-circle">
-							<div className="circle"></div>
-						</div>
-						<h1 className="title">dev</h1>
-					</div>
-				</div>
+				{logoType}
 			</div>
 		</div>
 	);

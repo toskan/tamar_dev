@@ -19,6 +19,12 @@ body,
 .content {
 	width: 100%;
 }
+.opacity-content {
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	-webkit-transition-property: opacity;
+	transition-property: opacity;
+}
 .header-div {
 	width: 100%;
 	overflow: hidden;
@@ -56,7 +62,6 @@ body,
 	background: #ffffff;
 	margin: 0.4em;
 }
-
 .circle {
 	background-image: linear-gradient(
 		90deg,
@@ -65,12 +70,6 @@ body,
 		rgba(69, 192, 124, 1) 66%,
 		rgba(21, 63, 40, 1) 100%
 	);
-	/* background-image: linear-gradient(
-		90deg,
-		rgba(3, 160, 73, 1) 0%,
-		rgba(41, 122, 77, 1) 50%,
-		rgba(69, 192, 124, 1) 100%
-	); */
 	content: '';
 	position: absolute;
 	top: -3px;
@@ -228,30 +227,32 @@ div.hello-circ-text {
 	.menu-list-item {
 		padding: 0.6em 0.6em;
 	}
-	.menu.burger-menu {
-		margin-left: 0.35em;
-	}
-	.circle-burger {
-		margin-top: 0.05em;
-	}
 	.outer-circle {
 		width: 18px;
 		height: 18px;
-		top: 0.15em;
+		top: 0.05em;
+	}
+	.outer-circle-small {
+		position: relative;
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		background: #ffffff;
+		margin: 0.15em;
+	}
+	.title-small {
+		font-size: 1.4em;
+		margin-left: 0.2em;
+		margin-right: 0.2em;
 	}
 	.title-div {
-		padding: 2.5em 0 0.3em 2.5em;
-		margin-right: 0.7em;
+		padding: 2.8em 0 0.3em 2.5em;
+		margin-right: 1em;
 	}
-	.title-menu-full-burger {
-		font-size: 2em;
-	}
-	.title-div-burger {
-		padding: 2.8em 0 0 2.5em;
-		margin-right: 0.3em;
-	}
-	.title-burger {
-		font-size: 1.5em;
+	.small-title-div {
+		padding: 3em 0 0.3em 2.5em;
+		margin-right: 0.6em;
+		display: flex;
 	}
 	.welcome-div {
 		padding: 1em;
@@ -266,8 +267,6 @@ div.hello-circ-text {
 	div.hello-circ-text {
 		font-size: larger;
 	}
-	.circle-menu-full-burger {
-	}
 }
 
 @media screen and (max-width: 823px) and (orientation: landscape) {
@@ -280,11 +279,6 @@ div.hello-circ-text {
 	}
 	.menu-list-item {
 		padding: 0.6em 0.6em;
-	}
-	.title-menu-full-burger {
-		font-size: 2em;
-	}
-	.circle-menu-full-burger {
 	}
 	.title-div {
 		margin-right: 0;
@@ -302,8 +296,5 @@ div.hello-circ-text {
 	.hello-container {
 		top: -100px;
 		left: 80px;
-	}
-	.paragraph-bio:first-child {
-		text-align: center;
 	}
 }

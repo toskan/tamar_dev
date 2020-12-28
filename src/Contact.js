@@ -68,7 +68,7 @@ const Contact = () => {
 	return (
 		<>
 			{inputShow && (
-				<div className="content-contact">
+				<div className="content-contact opacity-content">
 					<div className="contact-me">
 						<h3>get in touch</h3>
 					</div>

@@ -39,7 +39,7 @@ const Portfolio = (props) => {
 
 	return (
 		<>
-			<div className="portfolio">
+			<div className="portfolio opacity-content">
 				<ClickPrompt />
 				<Thumbnail
 					setNailSelect={setNailSelect}

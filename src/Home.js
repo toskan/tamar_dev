@@ -5,7 +5,7 @@ import './home.css';
 class Home extends React.Component {
 	render() {
 		return (
-			<div className="content">
+			<div className="content opacity-content">
 				<Welcome />
 			</div>
 		);
