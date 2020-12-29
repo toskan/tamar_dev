@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router';
 import './Reset.css';
 import './App.css';
 import Header from './Header';
@@ -16,6 +17,32 @@ function debounce(fn, ms) {
 }
 
 const App = () => {
+	const location = useLocation();
+	const ref = useRef({
+		renderCount: 0,
+		boolean: false,
+	});
+	useEffect(() => {
+		if (location.pathname) {
+			ref.current.renderCount += 1;
+			ref.current.boolean = true;
+			if (ref.current.renderCount > 1 && ref.current.boolean) {
+				document.getElementsByClassName(`opacity-content`)[0].animate(
+					[
+						{ opacity: `0.3` },
+						{
+							opacity: `1`,
+						},
+					],
+					{
+						duration: 300,
+						iterations: 1,
+					}
+				);
+			}
+		}
+	}, [location.pathname]);
+
 	const [dimensions, setDimensions] = useState({
 		height: window.innerHeight,
 		width: window.innerWidth,
@@ -23,15 +50,13 @@ const App = () => {
 	useEffect(() => {
 		const debouncedHandleResize = debounce(function handleResize() {
 			setDimensions({
-				...dimensions.height,
 				height: window.innerHeight,
-				...dimensions.width,
 				width: window.innerWidth,
 			});
 		}, 1000);
 
 		window.addEventListener('resize', debouncedHandleResize);
-
+		console.log(dimensions.width);
 		return (_) => {
 			window.removeEventListener('resize', debouncedHandleResize);
 		};

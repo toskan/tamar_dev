@@ -118,17 +118,15 @@ body,
 	font-size: 2.2em;
 	font-weight: 300;
 	color: #297a4d;
-	margin-left: 0.75em;
 	margin-bottom: 0.5em;
-}
-#shrunken-bar-menu {
-	font-size: 1.6em;
+	padding-top: 0.5em;
 }
 .menu-list {
 	list-style: none;
-	padding: 0;
-	padding-right: 0.7em;
-	margin-left: 0.9em;
+	font-size: 1.6em;
+}
+.menu-list:focus {
+	outline: none;
 }
 .side-nav-div {
 	padding: 0;
@@ -220,9 +218,6 @@ div.hello-circ-text {
 	}
 	.menu {
 		font-size: 2.1em;
-	}
-	#shrunken-bar-menu {
-		font-size: 1.5em;
 	}
 	.menu-list-item {
 		padding: 0.6em 0.6em;

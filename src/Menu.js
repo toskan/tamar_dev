@@ -11,11 +11,6 @@ const Menu = () => {
 	const [logoType, setLogoType] = useState(null);
 
 	useEffect(() => {
-		const content = document.getElementsByClassName('content');
-		const contentContact = document.getElementsByClassName(
-			'content-contact'
-		);
-		const portfolioDiv = document.getElementsByClassName('portfolio');
 		const contentOpacity = document.getElementsByClassName(
 			'opacity-content'
 		);
@@ -26,16 +21,11 @@ const Menu = () => {
 			setLogoType(<LogoHeaderReg />);
 		}
 
-		// const opacity = (content) => {
 		if (menuState) {
 			contentOpacity[0].style.opacity = '0.3';
 		} else {
 			contentOpacity[0].style.opacity = '1';
 		}
-		// };
-		// opacity(content);
-		// opacity(contentContact);
-		// opacity(portfolioDiv);
 	}, [menuState]);
 	return (
 		<div id="menu-header-div">

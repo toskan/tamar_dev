@@ -1,17 +1,13 @@
-.burger-nav-div:focus {
-	outline: none;
+.burger-nav-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-.burger-menu-list:focus {
+.burger-nav-div:focus {
 	outline: none;
 }
 .bm-item:focus {
 	outline: none;
-}
-.burger-menu {
-	margin-left: 0.15em;
-}
-.burger-menu-list {
-	margin-left: 0;
 }
 /* Position and sizing of burger button */
 .bm-burger-button {
@@ -55,13 +51,20 @@
 }
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-	height: 280px;
-	width: 280px;
+	width: 48px !important;
+	height: 48px !important;
+	right: 30px !important;
+	top: 30px !important;
 }
-
+.bm-cross-button > span {
+	top: 8px !important;
+	right: 20px !important;
+}
 /* Color/shape of close button cross */
 .bm-cross {
-	background: #bdc3c7;
+	background: #bdc3c7 !important;
+	width: 4px !important;
+	height: 28px !important;
 }
 
 /*
@@ -72,7 +75,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	position: fixed;
 	height: 100%;
 	top: 0;
-	width: 250px;
 }
 
 /* General sidebar styles */
@@ -139,9 +141,6 @@ div.hello-circ-text {
 @media screen and (max-width: 823px) and (orientation: landscape) {
 	.bm-burger-button {
 		top: 37px;
-	}
-	#shrunken-bar-menu {
-		font-size: 1.5em;
 	}
 }
 
