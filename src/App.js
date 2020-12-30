@@ -41,7 +41,7 @@ const App = () => {
 				);
 			}
 		}
-	}, [location.pathname]);
+	}, [location, location.pathname]);
 
 	const [dimensions, setDimensions] = useState({
 		height: window.innerHeight,

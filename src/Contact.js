@@ -15,6 +15,9 @@ const Contact = () => {
 
 	const onInputChange = (e) => {
 		setInputValues({ ...inputValues, [e.target.name]: e.target.value });
+		document.getElementById(
+			e.target.id
+		).style.cssText = `background-color: white; border: 1.5px solid #1d1d1d; color: #1d1d1d`;
 	};
 
 	useEffect(() => {
@@ -70,7 +73,10 @@ const Contact = () => {
 			{inputShow && (
 				<div className="content-contact opacity-content">
 					<div className="contact-me">
-						<h3>get in touch</h3>
+						<h3>
+							get in t<span className="touch-span">&#x25EF;</span>
+							uch
+						</h3>
 					</div>
 					<div className="form-div">
 						<form
@@ -85,6 +91,7 @@ const Contact = () => {
 							<input
 								type="text"
 								id="name name-input"
+								className="text-fields"
 								name="name"
 								placeholder="name"
 								value={inputValues.name}
@@ -99,6 +106,7 @@ const Contact = () => {
 							<input
 								type="email"
 								id="email email-input"
+								className="text-fields"
 								name="email"
 								placeholder="email"
 								aria-describedby="emailHelp"
@@ -114,6 +122,7 @@ const Contact = () => {
 							<input
 								type="text"
 								id="subject subject-input"
+								className="text-fields"
 								name="subject"
 								placeholder="subject"
 								value={inputValues.subject}
@@ -127,6 +136,7 @@ const Contact = () => {
 							</label>
 							<textarea
 								id="message description-input"
+								className="text-fields"
 								name="message"
 								placeholder="message"
 								rows="5"
