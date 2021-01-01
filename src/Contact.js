@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Contact.css';
 import Confetti from 'react-confetti';
 import axios from 'axios';
+import * as yup from 'yup';
 
 const Contact = () => {
 	const [inputValues, setInputValues] = useState({
@@ -12,6 +13,10 @@ const Contact = () => {
 	});
 
 	const [inputShow, setInputShow] = useState(true);
+
+	const errorRef = useRef();
+	const nameRef = useRef();
+	const messageRef = useRef();
 
 	const onInputChange = (e) => {
 		setInputValues({ ...inputValues, [e.target.name]: e.target.value });
@@ -37,35 +42,61 @@ const Contact = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		if (
-			inputValues.name === '' ||
-			inputValues.message === '' ||
-			inputValues.subject === ''
-		) {
-			alert('Fill in all required fields');
-			return;
-		}
+		let schema = yup.object().shape({
+			name: yup.string().min(2).required('name is required'),
+			email: yup.string().email('email is not valid'),
+			message: yup
+				.string()
+				.min(10)
+				.required('your message must be 10 characters or longer'),
+		});
 
-		var realName = /[A-Za-z]{1}[A-Za-z]/;
-		if (!realName.test(inputValues.name)) {
-			alert('Fill in a valid name');
-			return;
-		}
-
-		axios({
-			method: 'post',
-			url:
-				'https://j6ehcj6s7j.execute-api.us-east-1.amazonaws.com/test/contact',
-			data: JSON.stringify(inputValues),
-			crossDomain: true,
-		})
-			.then((res) => {
-				console.log(res.status);
-				setInputShow(false);
+		schema
+			.validate({
+				name: inputValues.name,
+				email: inputValues.email,
+				message: inputValues.message,
 			})
-			.catch((err) => {
-				console.log(err.message ? err.message : 'Unknown error');
+			.then((res) => {
+				errorRef.current.style.visibility = 'hidden';
+				submitOk();
+			})
+			.catch(function (err) {
+				if (err.message.length === 38 && inputValues.name.length > 1) {
+					messageRef.current.style.border = '1.5px solid red';
+					errorRef.current.innerText =
+						'message must be at least 10 characters';
+				}
+				if (inputValues.name.length < 2 && err.message.length !== 38) {
+					nameRef.current.style.border = '1.5px solid red';
+					errorRef.current.innerText = 'add your name';
+				}
+				if (err.message.length === 38 && inputValues.name.length < 2) {
+					errorRef.current.innerText =
+						'add your name and message must be at least 10 characters';
+					nameRef.current.style.border = '1.5px solid red';
+					messageRef.current.style.border = '1.5px solid red';
+				}
+				errorRef.current.style.visibility = `visible`;
+				errorRef.current.style.width = `${nameRef.current.offsetWidth}px`;
 			});
+
+		const submitOk = () => {
+			axios({
+				method: 'post',
+				url:
+					'https://j6ehcj6s7j.execute-api.us-east-1.amazonaws.com/test/contact',
+				data: JSON.stringify(inputValues),
+				crossDomain: true,
+			})
+				.then((res) => {
+					console.log(res.status);
+					setInputShow(false);
+				})
+				.catch((err) => {
+					console.log(err.message ? err.message : 'Unknown error');
+				});
+		};
 	};
 
 	return (
@@ -77,6 +108,9 @@ const Contact = () => {
 							get in t<span className="touch-span">&#x25EF;</span>
 							uch
 						</h3>
+						<p id="error-message" ref={errorRef}>
+							Fill in all fields, please.
+						</p>
 					</div>
 					<div className="form-div">
 						<form
@@ -94,6 +128,7 @@ const Contact = () => {
 								className="text-fields"
 								name="name"
 								placeholder="name"
+								ref={nameRef}
 								value={inputValues.name}
 								onChange={onInputChange}
 							/>
@@ -140,6 +175,7 @@ const Contact = () => {
 								name="message"
 								placeholder="message"
 								rows="5"
+								ref={messageRef}
 								value={inputValues.message}
 								onChange={onInputChange}
 							></textarea>

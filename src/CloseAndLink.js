@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { RiCloseLine } from 'react-icons/ri';
 
 const CloseAndLink = ({
@@ -7,13 +7,22 @@ const CloseAndLink = ({
 	setTranslate,
 	images,
 	slideNumber,
+	nailSelect,
 }) => {
 	const closeSlides = () => {
 		setNailSelect(true);
 		setActiveIndex(0);
 		setTranslate(0);
 	};
-
+	useEffect(() => {
+		if (!nailSelect) {
+			window.addEventListener('orientationchange', function () {
+				setNailSelect(true);
+				setActiveIndex(0);
+				setTranslate(0);
+			});
+		}
+	}, [nailSelect, setActiveIndex, setNailSelect, setTranslate]);
 	return (
 		<>
 			<div className="project-link-div">
@@ -29,7 +38,11 @@ const CloseAndLink = ({
 					/>
 				</a>
 			</div>
-			<RiCloseLine className="close-button" onClick={closeSlides} />
+			<RiCloseLine
+				className="close-button"
+				id="close-slide"
+				onClick={closeSlides}
+			/>
 		</>
 	);
 };
