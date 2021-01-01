@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Contact.css';
-import Confetti from 'react-confetti';
+import ConfettiSent from './ConfettiSent';
 import axios from 'axios';
 import * as yup from 'yup';
 
@@ -20,9 +20,12 @@ const Contact = () => {
 
 	const onInputChange = (e) => {
 		setInputValues({ ...inputValues, [e.target.name]: e.target.value });
-		document.getElementById(
-			e.target.id
-		).style.cssText = `background-color: white; border: 1.5px solid #1d1d1d; color: #1d1d1d`;
+		let activeInputStyle = {
+			backgroundColor: 'white',
+			border: '1.5px solid #1d1d1d',
+			color: '#1d1d1d',
+		};
+		e.target.style = activeInputStyle;
 	};
 
 	useEffect(() => {
@@ -35,7 +38,7 @@ const Contact = () => {
 					subject: '',
 					message: '',
 				});
-			}, 10000);
+			}, 6000);
 		}
 	}, [inputShow]);
 
@@ -187,19 +190,7 @@ const Contact = () => {
 					</div>
 				</div>
 			)}
-			{!inputShow && (
-				<div className="success-div">
-					<h2 className="success-message">
-						Thank you for your message!
-					</h2>
-					<p className="success-paragraph">
-						I will get back to you about {inputValues.subject} soon.
-					</p>
-					<Confetti
-						colors={['#1d1d1d', '#ffffff', ' #727983', '#297a4d']}
-					/>
-				</div>
-			)}
+			{!inputShow && <ConfettiSent subject={inputValues.subject} />}
 		</>
 	);
 };
