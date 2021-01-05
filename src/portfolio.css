@@ -54,13 +54,17 @@
 	width: 100%;
 	justify-content: center;
 	margin-top: 2em;
+	margin-bottom: 1em;
 }
 .click-prompt-h3 {
 	font-size: 1.35em;
 }
-.prompt-span {
+.prompt-arrow {
+	width: 1.5em;
+	height: 2em;
 	position: relative;
-	bottom: 15%;
+	top: 1.15em;
+	color: #1d1d1d;
 }
 .close-button {
 	position: fixed;
@@ -141,8 +145,16 @@
 		height: 50px;
 		width: 50px;
 	}
+	.click-prompt-div {
+		margin-bottom: 0;
+	}
 	.click-prompt-h3 {
-		font-size: 1.3em;
+		font-size: 1.1em;
+	}
+	.prompt-arrow {
+		width: 1.2em;
+		height: 1.8em;
+		top: 0.95em;
 	}
 	.thumbnail-div {
 		width: 20%;

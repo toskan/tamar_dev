@@ -20,10 +20,8 @@ body,
 	width: 100%;
 }
 .opacity-content {
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
-	-webkit-transition-property: opacity;
-	transition-property: opacity;
+	-webkit-transition: opacity 0.4s linear;
+	transition: opacity 0.4s linear;
 }
 .header-div {
 	width: 100%;
@@ -138,9 +136,14 @@ body,
 	margin-left: 1.5em;
 }
 .menu-list-item {
-	margin: 0.4em 0.3em;
-	padding-bottom: 0.5em;
+	margin: 0.8em 0;
+	margin-bottom: 1.3em;
 	color: #1d1d1d;
+	-webkit-transition: transform 0.5s ease-in-out;
+	transition: transform 0.5s ease-in-out;
+}
+.menu-list-item:hover {
+	transform: translateX(10px);
 }
 .menu-list-item:last-child {
 	padding-bottom: 0;
@@ -154,24 +157,19 @@ body,
 	background-image: linear-gradient(
 		180deg,
 		white 0%,
-		rgba(69, 192, 124, 0.5) 33%,
-		rgba(41, 122, 77, 0.5) 66%,
+		rgba(69, 192, 124, 0.5) 40%,
+		rgba(41, 122, 77, 0.5) 70%,
 		rgba(3, 160, 73, 0.5) 0%
 	);
 	background-repeat: repeat-x;
 	background-position-y: bottom;
 	background-size: 0 0;
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
-	-webkit-transition-property: all;
-	transition-property: all;
-	-webkit-transition-timing-function: ease-in-out;
-	transition-timing-function: ease-in-out;
+	-webkit-transition: all 0.4s linear;
+	transition: all 0.4s linear;
 }
 .menu-list-item > a:hover {
 	color: #5d5d5d;
 	background-size: 0.8em 0.8em;
-	border-bottom: 0.125rem solid rgba(69, 192, 124, 0.5);
 }
 .hello-container {
 	text-align: center;
@@ -232,10 +230,17 @@ div.hello-circ-text {
 		padding: 1em;
 	}
 	.menu {
-		font-size: 2.1em;
+		font-size: 2em;
+		margin-bottom: 0;
+		padding-bottom: 0.3em;
+		padding-top: 0.5em;
+	}
+	.menu-list {
+		font-size: 1.45em;
 	}
 	.menu-list-item {
-		padding: 0.6em 0.6em;
+		padding: 0.4em 0.4em;
+		margin-bottom: 0;
 	}
 	.outer-circle {
 		width: 18px;
@@ -284,11 +289,13 @@ div.hello-circ-text {
 		height: 100%;
 	}
 	.menu {
-		padding-left: 0.3em;
 		font-size: 2.2em;
+		margin-bottom: 0.5em;
+		padding-top: 0.1em;
 	}
 	.menu-list-item {
-		padding: 0.6em 0.6em;
+		padding: 0.6em 0;
+		margin: 0;
 	}
 	.title-div {
 		margin-right: 0;

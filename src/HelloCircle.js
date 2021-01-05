@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 const HelloCircle = () => {
 	const parev = '\u0532\u0561\u0580\u0565\u0582';
 	const txt = ` ${parev} ${parev} ${parev} ${parev} `.split('');
-	const txtMinusOne = txt.slice(0, txt.length - 1);
 	const deg = 360 / txt.length;
 	const [startOrigin, setStartOrigin] = useState(0);
 
@@ -34,8 +33,8 @@ const HelloCircle = () => {
 
 	return (
 		<div className="hello-container">
-			<div className="hello-circ-text" id="test">
-				{txtMinusOne.map((item, i) => (
+			<div className="hello-circ-text">
+				{txt.map((item, i) => (
 					<p
 						id={`hello-p-${i}`}
 						className="hello-p"
@@ -44,9 +43,6 @@ const HelloCircle = () => {
 						{item}
 					</p>
 				))}
-				<p id={`hello-p-${txt.length - 1}`} className="hello-p">
-					{txt[txt.length - 1]}
-				</p>
 			</div>
 		</div>
 	);

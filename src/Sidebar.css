@@ -26,10 +26,8 @@
 	height: 13% !important;
 	transform: scaleX(1);
 	box-shadow: none;
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
-	-webkit-transition-property: transform box-shadow background-color;
-	transition-property: transform box-shadow background-color;
+	-webkit-transition-duration: all 0.4s linear;
+	transition-duration: all 0.4s linear;
 }
 .bm-burger-bars:nth-child(2) {
 	top: 35% !important;
@@ -42,12 +40,8 @@
 .bm-burger-bars-hover {
 	background-color: #297a4d;
 	outline: none;
-	transform: scaleX(1.03);
+	transform: scaleX(1.035);
 	box-shadow: 0 0 1px rgba(0, 0, 0, 2);
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
-	-webkit-transition-property: background-color box-shadow, transform;
-	transition-property: background-color box-shadow, transform;
 }
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
@@ -57,8 +51,8 @@
 	top: 35px !important;
 }
 .bm-cross-button > span {
-	top: 8px !important;
-	right: 20px !important;
+	top: 15px !important;
+	right: 15px !important;
 }
 /* Color/shape of close button cross */
 .bm-cross {
@@ -80,7 +74,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* General sidebar styles */
 .bm-menu {
 	padding: 4em 1.5em 0;
-	/*font-size: 1.15em;*/
 	background: #e8e8e8;
 }
 #page-wrap {
@@ -117,19 +110,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	/* color: #ffffff; */
 }
 
-/* .hello-container {
-	text-align: center;
-	position: absolute;
-	top: -70px;
-	left: 100px;
-}
-
-div.hello-circ-text {
-	display: inline-block;
-	font-size: x-large;
-	color: #297a4d;
-} */
-
 /* tablets */
 /* @media screen and (max-width: 768px) and (orientation: portrait) */
 /* @media screen and (max-width: 1024px) and (orientation: landscape)  */
@@ -142,11 +122,25 @@ div.hello-circ-text {
 	.bm-burger-button {
 		top: 37px;
 	}
+	.bm-menu-wrap {
+		width: 220px !important;
+	}
+	.bm-cross-button > span {
+		top: 1px !important;
+		right: 18px !important;
+	}
 }
 
 @media screen and (max-width: 414px) and (orientation: portrait) {
 	.bm-burger-button {
 		left: 35px;
 		top: 47px;
+	}
+	.bm-menu-wrap {
+		width: 180px !important;
+	}
+	.bm-cross-button > span {
+		top: 0px !important;
+		right: 0px !important;
 	}
 }

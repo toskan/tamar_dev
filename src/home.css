@@ -38,12 +38,8 @@
 	background-repeat: repeat-x;
 	background-position-y: bottom;
 	background-size: 0.04em 0.04em;
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
-	-webkit-transition-property: all;
-	transition-property: all;
-	-webkit-transition-timing-function: ease-in-out;
-	transition-timing-function: ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
 }
 .portfolio-text-link:hover {
 	border-bottom: 0.125rem solid rgba(69, 192, 124, 0.7);

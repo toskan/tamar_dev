@@ -153,5 +153,6 @@
 @media screen and (max-width: 768px) {
 	.content-contact {
 		margin-top: 6em;
+		height: 100%;
 	}
 }
