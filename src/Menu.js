@@ -12,7 +12,6 @@ const Menu = () => {
 	const [mobilePortrait, setMobilePortrait] = useState(mobile.portrait);
 
 	useEffect(() => {
-		console.log(mobile.portrait === true);
 		const contentOpacity = document.getElementsByClassName(
 			'opacity-content'
 		);
@@ -26,7 +25,15 @@ const Menu = () => {
 
 	useEffect(() => {
 		window.addEventListener('orientationchange', function (e) {
-			setMobilePortrait(mobile.portrait);
+			if (
+				e.currentTarget.screen.orientation.type ===
+					'portrait-primary' &&
+				e.currentTarget.screen.availWidth < 414
+			)
+				setMobilePortrait(true);
+			else {
+				setMobilePortrait(false);
+			}
 		});
 
 		if (menuState && mobilePortrait) {
