@@ -164,8 +164,8 @@ body,
 	background-repeat: repeat-x;
 	background-position-y: bottom;
 	background-size: 0 0;
-	-webkit-transition: all 0.4s linear;
-	transition: all 0.4s linear;
+	-webkit-transition: all 0.2s linear;
+	transition: all 0.2s linear;
 }
 .menu-list-item > a:hover {
 	color: #5d5d5d;
@@ -187,6 +187,28 @@ div.hello-circ-text {
 	height: 200px;
 	position: absolute;
 	transform-origin: 0 100%;
+}
+.outer-circle-small {
+	position: relative;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #ffffff;
+	margin: 0.15em;
+}
+.title-small {
+	font-size: 1.4em;
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+}
+.title-div {
+	padding: 2.8em 0 0.3em 2.5em;
+	margin-right: 1em;
+}
+.small-title-div {
+	padding: 3em 0 0.3em 2.5em;
+	margin-right: 0.6em;
+	display: flex;
 }
 
 /* tablets */

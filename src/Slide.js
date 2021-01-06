@@ -12,7 +12,7 @@ const Slide = ({ content, orientation, mobile }) => {
 			setHeight('30%');
 		}
 		if (mobile.landscape && orientation === 'portrait') {
-			setHeight('100%');
+			setHeight('90%');
 		}
 		if (mobile.landscape && orientation === 'landscape') {
 			setHeight('90%');
