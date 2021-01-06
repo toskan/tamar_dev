@@ -21,7 +21,7 @@ const Menu = () => {
 		} else {
 			contentOpacity[0].style.opacity = '1';
 		}
-	}, [menuState, mobilePortrait]);
+	}, [menuState]);
 
 	useEffect(() => {
 		window.addEventListener('orientationchange', function (e) {

@@ -4,6 +4,7 @@ import React from 'react';
 
 const Slide = ({ content, orientation, mobile }) => {
 	const [height, setHeight] = React.useState(0);
+
 	React.useEffect(() => {
 		if (mobile.portrait && orientation === 'portrait') {
 			setHeight('100%');

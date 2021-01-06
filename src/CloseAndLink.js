@@ -15,13 +15,19 @@ const CloseAndLink = ({
 		setTranslate(0);
 	};
 	useEffect(() => {
-		if (!nailSelect) {
+		const orientChange = () => {
 			window.addEventListener('orientationchange', function () {
 				setNailSelect(true);
 				setActiveIndex(0);
 				setTranslate(0);
 			});
+		};
+
+		if (!nailSelect) {
+			orientChange();
 		}
+		return () =>
+			window.removeEventListener('orientationchange', orientChange);
 	}, [nailSelect, setActiveIndex, setNailSelect, setTranslate]);
 	return (
 		<>
