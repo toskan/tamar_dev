@@ -206,6 +206,15 @@ div.hello-circ-text {
 	margin-right: 0.6em;
 	display: flex;
 }
+.footer {
+	overflow: hidden;
+	margin: 1.2em 2em;
+	color: #727983;
+	position: relative;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
 
 /* tablets */
 /* @media screen and (max-width: 768px) and (orientation: portrait) */

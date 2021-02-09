@@ -3,20 +3,18 @@ import { useLocation } from 'react-router';
 import './Reset.css';
 import './App.css';
 import Header from './Header';
+import Footer from './Footer';
 import Router from './Router';
+import debounce from 'lodash/debounce';
 
-function debounce(fn, ms) {
-	let timer;
-	return (_) => {
-		clearTimeout(timer);
-		timer = setTimeout((_) => {
-			timer = null;
-			fn.apply(this, arguments);
-		}, ms);
-	};
-}
+const handleResize = () => {
+	debounce(
+		(height, width) => height(window.innerWidth)(width(window.innerHeight)),
+		1000
+	);
+};
 
-const App = () => {
+function App() {
 	const location = useLocation();
 	const ref = useRef({
 		renderCount: 0,
@@ -44,30 +42,27 @@ const App = () => {
 	}, [location, location.pathname]);
 
 	const [dimensions, setDimensions] = useState({
-		height: window.innerHeight,
-		width: window.innerWidth,
+		height: null,
+		width: null,
 	});
 	useEffect(() => {
-		const debouncedHandleResize = debounce(function handleResize() {
-			setDimensions({
-				height: window.innerHeight,
-				width: window.innerWidth,
-			});
-		}, 1000);
+		window.onresize = handleResize(
+			setDimensions.height,
+			setDimensions.width
+		);
 
-		window.addEventListener('resize', debouncedHandleResize);
-		console.log(dimensions.width);
 		return (_) => {
-			window.removeEventListener('resize', debouncedHandleResize);
+			window.removeEventListener('resize', handleResize);
 		};
-	});
+	}, [dimensions.height, dimensions.width]);
 
 	return (
 		<div className="main">
 			<Header />
 			<Router />
+			<Footer />
 		</div>
 	);
-};
+}
 
 export default App;
