@@ -61,8 +61,7 @@ const Submit = ({ setInputShow, setInputValues, inputValues, errorRef }) => {
 		const submitOk = () => {
 			axios({
 				method: 'post',
-				url:
-					'https://j6ehcj6s7j.execute-api.us-east-1.amazonaws.com/test/contact',
+				url: 'https://j6ehcj6s7j.execute-api.us-east-1.amazonaws.com/test/contact',
 				data: JSON.stringify(inputValues),
 				crossDomain: true,
 			})
