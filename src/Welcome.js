@@ -43,17 +43,26 @@ function Welcome() {
 									className="portfolio-text-link"
 								>
 									portfolio
-								</Link>{' '}
-								and {` `}
+								</Link>
+								, {` `}
 								<a
 									href="https://github.com/toskan"
 									rel="noopener noreferrer"
 									target="_blank"
 									className="portfolio-text-link"
 								>
-									GitHub
+									GitHub {` `}
 								</a>
-								{` `}page.
+								and {` `}
+								<a
+									href="https://www.codewars.com/users/toskan"
+									rel="noopener noreferrer"
+									target="_blank"
+									className="portfolio-text-link"
+								>
+									Codewars {` `}
+								</a>
+								pages.
 							</p>
 							<br />
 							<p className="paragraph-bio">

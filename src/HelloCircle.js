@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const HelloCircle = () => {
-	const parev = '\u0532\u0561\u0580\u0565\u0582';
-	const txt = ` ${parev} ${parev} ${parev} ${parev} `.split('');
+	const txt = ` JavaScript CSS HTML jQuery React Redux `.split('');
 	const deg = 360 / txt.length;
 	const [startOrigin, setStartOrigin] = useState(0);
 
